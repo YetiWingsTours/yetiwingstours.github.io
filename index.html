@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YetiWings Tours and Travels Pvt Ltd</title>
+    <link rel="icon" href="https://i.postimg.cc/47QP6WxB/favicon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles - Original Colors */
+        :root {
+            --primary: #2a5c78;
+            --secondary: #e76f51;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #2a9d8f;
+            --warning: #e9c46a;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            color: var(--primary);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Button Styles */
+        .btn-primary {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: #d45a3d;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            display: inline-block;
+            padding: 10px 25px;
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Header & Navigation - Updated for left alignment */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: flex-start; /* Changed to left align */
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            margin-right: 2rem; /* Added spacing between logo and nav */
+        }
+        
+        .nav-logo img {
+            height: 80px; /* Increased logo size from 50px to 80px */
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-item {
+            position: relative;
+            margin-left: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--dark);
+            font-weight: 700; /* Made bold as requested */
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        
+        .nav-link:hover {
+            color: var(--secondary);
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            padding: 0.5rem 0;
+            min-width: 150px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            list-style: none;
+            z-index: 100;
+        }
+        
+        .dropdown-menu li {
+            padding: 0.5rem 1rem;
+        }
+        
+        .dropdown-menu a {
+            color: var(--dark);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        .dropdown-menu a:hover {
+            color: var(--secondary);
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            margin-left: auto; /* Push hamburger to the right on mobile */
+        }
+        
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3') no-repeat center center/cover;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            line-height: 1.2;
+        }
+        
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        /* Featured Packages */
+        .featured-packages {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .package-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .package-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .package-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .package-card:hover .package-image img {
+            transform: scale(1.1);
+        }
+        
+        .package-content {
+            padding: 1.5rem;
+        }
+        
+        .package-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .package-duration {
+            display: inline-block;
+            background-color: var(--success);
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .package-description {
+            margin-bottom: 1.5rem;
+            color: #666;
+        }
+        
+        /* Mountain Flights - Improved Section */
+        .mountain-flights {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .flights-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .flight-info h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        
+        .flight-info > p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .flight-benefits {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            background: var(--light);
+            padding: 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+        
+        .benefit-item i {
+            color: var(--secondary);
+            margin-right: 0.8rem;
+            font-size: 1.2rem;
+        }
+        
+        .flight-price {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1.5rem 0;
+        }
+        
+        .flight-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            max-height: 350px; /* Reduced image size */
+        }
+        
+        .flight-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 12px;
+        }
+        
+        /* Services Preview */
+        .services-preview {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        
+        .footer-section p {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-section i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-section a:hover {
+            color: var(--secondary);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* WhatsApp Widget */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.8rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-btn:hover {
+            background-color: #128c7e;
+            transform: scale(1.1);
+        }
+        
+        .whatsapp-tooltip {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background-color: white;
+            color: var(--dark);
+            padding: 0.8rem 1.2rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            width: 180px;
+        }
+        
+        .whatsapp-widget:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Social Contact Modal - NEW STYLES */
+        .social-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+        
+        .social-modal-content {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            text-align: center;
+        }
+        
+        .close-social-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+            transition: color 0.3s;
+            z-index: 10;
+        }
+        
+        .close-social-modal:hover {
+            color: var(--secondary);
+        }
+        
+        .social-modal-content h2 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .social-icons-modal {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+        }
+        
+        .facebook-icon {
+            background-color: #3b5998;
+        }
+        
+        .instagram-icon {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+        }
+        
+        .whatsapp-icon {
+            background-color: #25d366;
+        }
+        
+        .email-icon {
+            background-color: var(--primary);
+            cursor: pointer;
+        }
+        
+        .email-reveal {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background-color: var(--light);
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .email-reveal p {
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .email-address {
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .copy-email-btn {
+            background-color: var(--secondary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 0.5rem;
+        }
+        
+        .copy-email-btn:hover {
+            background-color: #d45a3d;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .flights-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .flight-image {
+                order: -1;
+                max-height: 300px;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .flight-benefits {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-logo img {
+                height: 70px; /* Adjusted for smaller screens */
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background-color: white;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.4s ease;
+                gap: 2rem;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                display: none;
+                margin-top: 0.5rem;
+            }
+            
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .navbar {
+                justify-content: space-between; /* Revert to space between on mobile */
+            }
+            
+            .nav-logo img {
+                height: 60px; /* Adjusted for mobile */
+            }
+            
+            .social-icons-modal {
+                gap: 1rem;
+            }
+            
+            .social-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-content h1 {
+                font-size: 1.8rem;
+            }
+            
+            .btn-primary, .btn-secondary {
+                padding: 10px 20px;
+            }
+            
+            .nav-logo img {
+                height: 55px;
+            }
+            
+            .mountain-flights {
+                padding: 3rem 0;
+            }
+            
+            .flight-image {
+                max-height: 250px;
+            }
+            
+            .social-modal-content {
+                padding: 1.5rem;
+            }
+            
+            .social-icons-modal {
+                flex-wrap: wrap;
+            }
+            
+            .flight-price {
+                font-size: 1.1rem;
+                padding: 0.4rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <img src="https://i.postimg.cc/cKX6fYNf/logo.png" alt="YetiWings Logo">
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">Tours Packages <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="domestic-packages.html">Domestic</a></li>
+                        <li><a href="international-packages.html">International</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Nepal's Wonders with YetiWings Tours</h1>
+            <p>Your trusted partner for unforgettable adventures in the Himalayas and beyond.</p>
+            <a href="domestic-packages.html" class="btn-primary">Explore Our Packages</a>
+        </div>
+    </section>
+
+    <section class="featured-packages">
+        <div class="container">
+            <h2 class="section-title">Featured Tour Packages</h2>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://i.postimg.cc/YGLkjm2r/everest.jpg" alt="Everest Base Camp Trek">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">Everest Base Camp Trek</h3>
+                        <span class="package-duration">14 Days</span>
+                        <p class="package-description">Experience the ultimate adventure trekking to the base of the world's highest mountain.</p>
+                        <button class="btn-primary social-inquire-btn" data-package="Everest Base Camp Trek">Inquire Now</button>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://i.postimg.cc/Ln3SqSS1/annapurna.jpg" alt="Annapurna Circuit Trek">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">Annapurna Circuit Trek</h3>
+                        <span class="package-duration">18 Days</span>
+                        <p class="package-description">One of the world's classic treks through diverse landscapes and traditional villages.</p>
+                        <button class="btn-primary social-inquire-btn" data-package="Annapurna Circuit Trek">Inquire Now</button>
+                    </div>
+                </div>
+                
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="https://i.postimg.cc/QVMYgrc7/chitwan.jpg" alt="Chitwan Safari Experience">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">Chitwan Safari Experience</h3>
+                        <span class="package-duration">3 Days</span>
+                        <p class="package-description">Explore the wilderness of Chitwan National Park with jungle safari activities.</p>
+                        <button class="btn-primary social-inquire-btn" data-package="Chitwan Safari Experience">Inquire Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="domestic-packages.html" class="btn-secondary">View All Packages</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="mountain-flights">
+        <div class="container">
+            <h2 class="section-title">Mountain Flight Experience</h2>
+            <div class="flights-content">
+                <div class="flight-info">
+                    <h3>Mountain Flight Experience</h3>
+                    <span class="package-duration">1 Day</span>
+                    <p>Witness the breathtaking beauty of the Himalayas from above on our exclusive mountain flight. Enjoy unparalleled views of the world's highest peaks including Mount Everest, Lhotse, and Makalu.</p>
+                    
+                    <div class="flight-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-clock"></i>
+                            <span>1-hour scenic flight</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-mountain"></i>
+                            <span>Views of Everest & more</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-camera"></i>
+                            <span>Window seat guaranteed</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-certificate"></i>
+                            <span>Flight certificate</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flight-price">USD 238</div>
+                    <br>
+                    <button class="btn-primary social-inquire-btn" data-package="Mountain Flight Experience">Book Now</button>
+                </div>
+                <div class="flight-image">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Mountain Flight Experience">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-preview">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3>Visa Processing</h3>
+                    <p>Fast and reliable visa processing services for all destinations.</p>
+                    <button class="btn-secondary social-inquire-btn" data-package="Visa Processing">Inquiry Now</button>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <h3>Flight Ticketing</h3>
+                    <p>Get the best deals on domestic and international flights.</p>
+                    <button class="btn-secondary social-inquire-btn" data-package="Flight Ticketing">Inquiry Now</button>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Vehicle Rentals</h3>
+                    <p>Comfortable vehicles for all your transportation needs.</p>
+                    <button class="btn-secondary social-inquire-btn" data-package="Vehicle Rentals">Inquiry Now</button>
+                </div>
+            </div>
+            <div class="text-center">
+                <a href="services.html" class="btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="index.html" class="footer-logo">
+                        Yeti<span>Wings</span>
+                    </a>
+                    <p>Your trusted partner for unforgettable adventures in the Himalayas and beyond.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="domestic-packages.html">Domestic Packages</a></li>
+                        <li><a href="international-packages.html">International Packages</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</p>
+                    <p><i class="fas fa-phone"></i> +977-9840106877</p>
+                    <p><i class="fas fa-envelope"></i> infoyetiwings@gmail.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/1Aaqgy4PeR/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/yetiwings_tours_and_travels" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 YetiWings Tours and Travels Pvt Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="whatsapp-widget">
+        <a href="https://wa.me/9779840106877" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <div class="whatsapp-tooltip">Hi! How can we help you?</div>
+    </div>
+
+    <!-- Social Contact Modal - NEW MODAL -->
+    <div class="social-modal" id="socialModal">
+        <div class="social-modal-content">
+            <span class="close-social-modal">&times;</span>
+            <h2>Contact Us</h2>
+            <p>Reach out to us through any of these channels</p>
+            
+            <div class="social-icons-modal">
+                <a href="https://www.facebook.com/share/1Aaqgy4PeR/" target="_blank" class="social-icon facebook-icon">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/yetiwings_tours_and_travels" target="_blank" class="social-icon instagram-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/9779840106877" target="_blank" class="social-icon whatsapp-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <div class="social-icon email-icon" id="emailRevealBtn">
+                    <i class="fas fa-envelope"></i>
+                </div>
+            </div>
+            
+            <div class="email-reveal" id="emailReveal">
+                <p>Email us at:</p>
+                <p class="email-address">infoyetiwings@gmail.com</p>
+                <button class="copy-email-btn" id="copyEmailBtn">Copy Email</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Navigation
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const navItems = document.querySelectorAll('.nav-item');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+        });
+        
+        // Dropdown menu for mobile
+        navItems.forEach(item => {
+            if (item.classList.contains('dropdown')) {
+                const dropdownToggle = item.querySelector('.nav-link');
+                
+                dropdownToggle.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        item.classList.toggle('active');
+                        
+                        // Close other dropdowns
+                        document.querySelectorAll('.nav-item.dropdown').forEach(dropdown => {
+                            if (dropdown !== item) {
+                                dropdown.classList.remove('active');
+                            }
+                        });
+                    }
+                });
+            }
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                
+                // Close any open dropdowns on mobile
+                if (window.innerWidth <= 768) {
+                    document.querySelectorAll('.nav-item.dropdown').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                }
+            });
+        });
+        
+        // Social Contact Modal
+        const socialModal = document.getElementById('socialModal');
+        const socialInquireButtons = document.querySelectorAll('.social-inquire-btn');
+        const closeSocialModal = document.querySelector('.close-social-modal');
+        const emailRevealBtn = document.getElementById('emailRevealBtn');
+        const emailReveal = document.getElementById('emailReveal');
+        const copyEmailBtn = document.getElementById('copyEmailBtn');
+        
+        socialInquireButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                socialModal.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                
+                // Reset email reveal section
+                emailReveal.style.display = 'none';
+            });
+        });
+        
+        closeSocialModal.addEventListener('click', () => {
+            socialModal.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Enable scrolling
+        });
+        
+        // Close modal when clicking outside
+        socialModal.addEventListener('click', (e) => {
+            if (e.target === socialModal) {
+                socialModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && socialModal.style.display === 'flex') {
+                socialModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Email reveal functionality
+        emailRevealBtn.addEventListener('click', () => {
+            emailReveal.style.display = emailReveal.style.display === 'block' ? 'none' : 'block';
+        });
+        
+        // Copy email functionality
+        copyEmailBtn.addEventListener('click', () => {
+            const emailText = 'infoyetiwings@gmail.com';
+            navigator.clipboard.writeText(emailText).then(() => {
+                // Change button text temporarily to indicate success
+                copyEmailBtn.textContent = 'Copied!';
+                setTimeout(() => {
+                    copyEmailBtn.textContent = 'Copy Email';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        });
+        
+        // Sticky header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
