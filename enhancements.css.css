@@ -1,0 +1,242 @@
+/**
+ * Yeti Wings - Enhancements.css
+ * Styles for features added by enhancements.js
+ * Include this AFTER your main styles (or before closing </head>)
+ * Version: 1.0
+ */
+
+/* ---------- TOAST NOTIFICATIONS ---------- */
+.toast-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #2e7d32;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    z-index: 10000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+.toast-notification.error {
+    background: #c62828;
+}
+.toast-notification.show {
+    opacity: 1;
+}
+
+/* ---------- DARK MODE TOGGLE BUTTON ---------- */
+#themeToggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    padding: 10px 15px;
+    border-radius: 30px;
+    border: none;
+    background: #1e2a3a;
+    color: white;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+}
+#themeToggle:hover {
+    transform: scale(1.02);
+    background: #2c3e50;
+}
+
+/* ---------- BACK TO TOP BUTTON ---------- */
+#globalBackToTop {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #87CEEB;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.2s;
+}
+#globalBackToTop.show {
+    opacity: 1;
+}
+#globalBackToTop:hover {
+    transform: translateY(-2px);
+    background: #6bb5d9;
+}
+
+/* ---------- LIGHTBOX ---------- */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10050;
+    cursor: pointer;
+}
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+#lightbox.active {
+    display: flex;
+}
+
+/* ---------- ENQUIRY COUNTER ---------- */
+.enquiry-counter {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #87CEEB;
+    color: #1e2a3a;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 1001;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    pointer-events: none;
+    font-family: inherit;
+}
+
+/* ---------- LIVE CHAT BANNER ---------- */
+.live-chat-banner {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    border: 1px solid #87CEEB;
+    border-radius: 30px;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1002;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.live-chat-banner:hover {
+    background: #f0f8ff;
+    transform: translateX(-50%) scale(1.02);
+}
+.live-chat-banner a {
+    color: #87CEEB;
+    text-decoration: none;
+}
+.live-chat-banner a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- COOKIE CONSENT BANNER ---------- */
+#cookieBanner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(30,42,58,0.95);
+    backdrop-filter: blur(4px);
+    color: white;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    z-index: 10020;
+    font-size: 0.9rem;
+    font-family: inherit;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+}
+#cookieBanner button {
+    background: #87CEEB;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 15px;
+    transition: background 0.2s;
+}
+#cookieBanner button:hover {
+    background: #6bb5d9;
+}
+
+/* ---------- GLOBAL IMPROVEMENTS (optional but safe) ---------- */
+*:focus {
+    outline: 2px solid #87CEEB;
+    outline-offset: 2px;
+}
+
+/* Smooth transitions for interactive elements */
+a, button, .btn, .tour-card, .service-card, .why-card, .feature-card {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Print styles – hide floating elements when printing */
+@media print {
+    #themeToggle,
+    #globalBackToTop,
+    .enquiry-counter,
+    .live-chat-banner,
+    #cookieBanner,
+    #lightbox {
+        display: none !important;
+    }
+    a[href]::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+}
+
+/* ---------- RESPONSIVE ADJUSTMENTS ---------- */
+@media (max-width: 768px) {
+    #themeToggle {
+        bottom: 15px;
+        left: 15px;
+        padding: 6px 12px;
+        font-size: 0.7rem;
+    }
+    #globalBackToTop {
+        bottom: 70px;
+        right: 15px;
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+    }
+    .enquiry-counter {
+        top: 10px;
+        right: 10px;
+        font-size: 0.7rem;
+        padding: 4px 10px;
+    }
+    .live-chat-banner {
+        bottom: 15px;
+        font-size: 0.7rem;
+        padding: 5px 12px;
+    }
+    #cookieBanner {
+        font-size: 0.8rem;
+        padding: 10px 15px;
+    }
+    #cookieBanner button {
+        padding: 6px 15px;
+        margin-left: 10px;
+    }
+}
