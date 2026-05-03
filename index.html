@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Yeti Wings Tours & Travels | Explore the world with us</title>
+    <meta name="description" content="Yeti Wings – Himalayan adventures, luxury tours & cultural journeys. Expert guides, sustainable travel. Book your dream trip today.">
+    <meta name="keywords" content="Nepal travel, Everest trek, Annapurna, Bhutan tour, Yeti Wings, Himalayas, mountain flight">
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/635b83br/png.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* ===== GLOBAL STYLES (identical to previous working version) ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --white: #FFFFFF;
+            --offwhite: #FAFAFA;
+            --sky: #87CEEB;
+            --sky-medium: #6BB5D9;
+            --sky-deep: #4A90E2;
+            --navy-primary: #1e2a3a;
+            --navy-light: #2C3E50;
+            --navy-deep: #0e1a26;
+            --gray-body: #546E7A;
+            --gray-soft: #7F8C8D;
+            --gold-soft: #F7D44A;
+            --moss-light: #7CB490;
+
+            --shadow-light: 0 10px 30px rgba(30, 42, 58, 0.08);
+            --shadow-medium: 0 15px 35px rgba(135, 206, 235, 0.15);
+            --shadow-strong: 0 20px 40px rgba(135, 206, 235, 0.2);
+
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        body {
+            font-family: var(--font-sans);
+            color: var(--gray-body);
+            background-color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+        h1 {
+            font-family: var(--font-serif);
+            font-weight: 900;
+            letter-spacing: 0.02em;
+            color: var(--navy-primary);
+        }
+        h2, .section-title {
+            font-family: var(--font-serif);
+            font-weight: 900;
+            letter-spacing: 0.02em;
+            color: var(--navy-light);
+        }
+        h3, h4, .card-title {
+            font-family: var(--font-serif);
+            font-weight: 900;
+            color: var(--navy-primary);
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        .container {
+            width: 90%;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 60px;
+            text-align: center;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: var(--sky);
+            margin: 20px auto 0;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        .section-title:hover:after {
+            width: 100px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 14px 36px;
+            background-color: var(--sky);
+            color: var(--white);
+            font-weight: 600;
+            border-radius: 40px;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+        }
+        .btn:hover {
+            background-color: var(--sky-medium);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-medium);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--sky);
+            color: var(--navy-primary);
+            box-shadow: none;
+        }
+        .btn-outline:hover {
+            background: var(--sky);
+            color: var(--white);
+        }
+
+        /* HEADER (same as before) */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background: transparent;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 20px 2% 20px 0;
+        }
+        .header-container {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-area img {
+            height: 150px;
+            width: auto;
+            display: block;
+            filter: drop-shadow(0 4px 12px rgba(30,42,58,0.2));
+            transition: height 0.3s ease, filter 0.3s;
+        }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 2.8rem;
+            letter-spacing: 3px;
+            color: #FFFFFF;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            transition: font-size 0.3s ease, color 0.3s, text-shadow 0.3s;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li a {
+            color: #FFFFFF;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .nav-links li a:hover {
+            border-bottom-color: #87CEEB;
+            color: #87CEEB;
+        }
+        .hamburger {
+            display: none;
+        }
+        header.scrolled {
+            padding: 12px 5%;
+        }
+        header.scrolled .header-container {
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(16px) saturate(200%);
+            border-radius: 80px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 0.5px solid rgba(255, 255, 255, 0.6);
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.05), rgba(255,255,255,0.2));
+            padding: 6px 24px;
+        }
+        header.scrolled .logo-area img {
+            height: 45px;
+        }
+        header.scrolled .logo-text {
+            font-size: 1.4rem;
+            color: #1e2a3a;
+            text-shadow: none;
+        }
+        header.scrolled .nav-links li a {
+            color: #1e2a3a;
+        }
+        header.scrolled .nav-links li a:hover {
+            color: #87CEEB;
+        }
+        @media (max-width: 1024px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: 220px;
+                background: rgba(255, 255, 255, 0.92);
+                backdrop-filter: blur(20px);
+                border-radius: 30px;
+                padding: 20px;
+                gap: 20px;
+                text-align: center;
+                flex-direction: column;
+                box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+                border: 0.5px solid rgba(255, 255, 255, 0.6);
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+                font-size: 2rem;
+                color: white;
+                cursor: pointer;
+                background: none;
+                border: none;
+                line-height: 1;
+                transition: color 0.3s;
+            }
+            header.scrolled .hamburger {
+                color: #1e2a3a;
+            }
+            header.scrolled .nav-links li a {
+                color: #1e2a3a;
+            }
+            header.scrolled .nav-links li a:hover {
+                color: #87CEEB;
+            }
+            .logo-area img {
+                height: 100px;
+            }
+            .logo-text {
+                font-size: 2rem;
+            }
+            header.scrolled .logo-area img {
+                height: 40px;
+            }
+            header.scrolled .logo-text {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* HERO SECTION (same) */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 750px;
+            background-image: url('https://i.postimg.cc/9M3mQsYc/annapurna-base-camp.jpg');
+            background-size: cover;
+            background-position: center 30%;
+            background-attachment: scroll;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.05) 70%, rgba(255,255,255,0.15));
+            pointer-events: none;
+        }
+        /* Floating clouds same as before */
+        .cloud {
+            position: absolute;
+            background: rgba(135,206,235,0.3);
+            border-radius: 1000px;
+            filter: blur(12px);
+            z-index: 1;
+            pointer-events: none;
+        }
+        .cloud1 { width: 300px; height: 80px; top: 20%; left: 5%; animation: floatCloud 30s infinite linear; }
+        .cloud2 { width: 400px; height: 100px; bottom: 25%; right: 2%; animation: floatCloud 35s infinite reverse; }
+        .cloud3 { width: 200px; height: 60px; top: 60%; left: 20%; animation: floatCloud 25s infinite; }
+        @keyframes floatCloud {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(50px); }
+            100% { transform: translateX(0); }
+        }
+        .hero-top-bar {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            z-index: 1001;
+            padding: 0 30px;
+            width: 100%;
+            pointer-events: auto;
+        }
+        .top-left {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .top-right {
+            display: flex;
+            align-items: center;
+        }
+        .hero-top-bar a {
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            transition: opacity 0.2s;
+            pointer-events: auto;
+        }
+        .hero-top-bar a:hover {
+            opacity: 0.8;
+        }
+        .social-icon {
+            font-size: 1.2rem;
+        }
+        .whatsapp-btn {
+            background-color: #25D366;
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            font-weight: 600;
+        }
+        .plan-trip-btn {
+            background-color: #87CEEB;
+            color: white;
+            padding: 0.4rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            border: none;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .plan-trip-btn:hover {
+            background-color: #6BB5D9;
+            transform: translateY(-2px);
+        }
+        @media (max-width: 768px) {
+            .hero-top-bar {
+                top: 10px;
+                padding: 0 15px;
+                flex-direction: column;
+                gap: 10px;
+                align-items: stretch;
+            }
+            .top-left {
+                justify-content: center;
+                gap: 1rem;
+            }
+            .top-right {
+                justify-content: center;
+            }
+            .hero-top-bar a {
+                font-size: 0.8rem;
+            }
+            .plan-trip-btn {
+                padding: 0.3rem 1rem;
+            }
+        }
+        .hero-content {
+            position: relative;
+            z-index: 5;
+            max-width: 1000px;
+            padding: 0 20px;
+            animation: fadeUp 1.2s ease;
+        }
+        .hero h1 {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.6), 0 0 10px rgba(0,0,0,0.4);
+            line-height: 1.2;
+            color: var(--white);
+        }
+        .hero p {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 45px;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+            color: var(--white);
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .hero .btn {
+            font-size: 1.2rem;
+            padding: 16px 40px;
+            min-width: 200px;
+            background-color: var(--sky);
+            border: none;
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .hero .btn-outline {
+            background: rgba(255,255,255,0.9);
+            border: 2px solid var(--sky);
+            color: var(--navy-primary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .hero .btn-outline:hover {
+            background: var(--sky);
+            color: white;
+        }
+        .scroll-down {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--white);
+            font-size: 2rem;
+            z-index: 5;
+            animation: bounce 2s infinite;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+        @keyframes bounce {
+            0%,20%,50%,80%,100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-20px); }
+            60% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* POPULAR TREKS & TOURS, METRICS, TESTIMONIALS, WHY CHOOSE US (identical) */
+        .tour-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .tour-card {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            aspect-ratio: 3/4;
+            cursor: pointer;
+            background: var(--white);
+        }
+        .tour-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-strong);
+            border: 1px solid rgba(135,206,235,0.3);
+        }
+        .tour-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        .tour-card:hover img {
+            transform: scale(1.05);
+        }
+        .tour-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            padding: 6px 15px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            z-index: 10;
+            background: var(--sky);
+            color: white;
+        }
+        .tour-badge.luxury {
+            background: transparent;
+            border: 2px solid var(--gold-soft);
+            color: var(--gold-soft);
+        }
+        .tour-badge.moderate {
+            background: var(--moss-light);
+            color: white;
+        }
+        .tour-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            margin: 0;
+            padding: 20px 20px 15px;
+            background: linear-gradient(to top, rgba(255,255,255,0.95), transparent);
+            color: var(--navy-primary);
+            font-size: 1.6rem;
+            font-weight: 900;
+            font-family: var(--font-serif);
+            z-index: 2;
+            transition: opacity 0.3s ease;
+        }
+        .tour-card:hover .tour-title {
+            opacity: 0;
+        }
+        .tour-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(30,42,58,0.98), rgba(30,42,58,0.9));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 30px 25px;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            color: white;
+            z-index: 3;
+        }
+        .tour-card:hover .tour-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+        .tour-overlay .tour-meta {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 15px 0;
+            font-weight: 600;
+            color: rgba(255,255,255,0.9);
+            transform: translateY(20px);
+            transition: transform 0.4s ease 0.05s;
+        }
+        .tour-card:hover .tour-overlay .tour-meta {
+            transform: translateY(0);
+        }
+        .tour-overlay .tour-meta i {
+            color: var(--sky);
+            margin-right: 6px;
+        }
+        .tour-overlay .tour-description {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+            transform: translateY(20px);
+            transition: transform 0.4s ease 0.1s;
+        }
+        .tour-card:hover .tour-overlay .tour-description {
+            transform: translateY(0);
+        }
+        .tour-overlay .btn-outline {
+            background: transparent;
+            border: 2px solid var(--sky);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: transform 0.4s ease 0.15s, background 0.3s;
+            align-self: flex-start;
+            transform: translateY(20px);
+        }
+        .tour-card:hover .tour-overlay .btn-outline {
+            transform: translateY(0);
+        }
+        .tour-overlay .btn-outline:hover {
+            background: var(--sky);
+            color: var(--navy-primary);
+        }
+        .metrics {
+            padding: 80px 0;
+            background: var(--white);
+        }
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+        .metric-item i {
+            font-size: 3.5rem;
+            color: var(--sky);
+            margin-bottom: 15px;
+        }
+        .metric-number {
+            font-size: 3.8rem;
+            font-weight: 900;
+            color: var(--navy-primary);
+            line-height: 1.2;
+            font-family: var(--font-serif);
+        }
+        .metric-label {
+            color: var(--gray-body);
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        .testimonials {
+            background: var(--offwhite);
+            padding: 100px 0;
+        }
+        .swiper {
+            width: 100%;
+            padding: 10px 10px 60px;
+        }
+        .swiper-slide {
+            background: white;
+            border-radius: 20px;
+            padding: 35px 30px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            height: auto;
+            border: 1px solid rgba(135,206,235,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .swiper-slide::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 4rem;
+            color: var(--sky);
+            opacity: 0.1;
+            z-index: 0;
+        }
+        .stars {
+            color: var(--gold-soft);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+        .testimonial-quote {
+            font-size: 1rem;
+            font-style: italic;
+            margin-bottom: 25px;
+            color: var(--gray-body);
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+        .guest {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        .guest img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--sky);
+            padding: 2px;
+        }
+        .guest h4 {
+            font-size: 1.1rem;
+            margin-bottom: 2px;
+            font-family: var(--font-serif);
+            color: var(--navy-primary);
+        }
+        .guest span {
+            font-size: 0.85rem;
+            color: var(--gray-body);
+        }
+        .swiper-pagination-bullet-active {
+            background: var(--sky) !important;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .feature-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+            border-color: rgba(135,206,235,0.5);
+        }
+        .feature-card i {
+            font-size: 3rem;
+            color: var(--sky);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .feature-card:hover i {
+            transform: scale(1.1) rotate(2deg);
+        }
+        .feature-card h4 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--navy-light);
+        }
+        .feature-card p {
+            color: var(--gray-body);
+        }
+        /* MODAL styles (unchanged) */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-content {
+            background: white;
+            width: 90%;
+            max-width: 700px;
+            max-height: 90vh;
+            overflow-y: auto;
+            border-radius: 24px;
+            padding: 40px;
+            position: relative;
+            box-shadow: var(--shadow-strong);
+            animation: modalSlideIn 0.4s ease;
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--gray-soft);
+            transition: color 0.2s;
+            line-height: 1;
+        }
+        .modal-close:hover {
+            color: var(--navy-primary);
+        }
+        .modal h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--navy-primary);
+            padding-right: 30px;
+            font-weight: 900;
+        }
+        .modal-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 25px 0;
+            background: var(--offwhite);
+            padding: 25px;
+            border-radius: 16px;
+        }
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .detail-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gray-soft);
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .detail-value {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--navy-primary);
+        }
+        .modal-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--navy-primary);
+            margin-bottom: 30px;
+        }
+        .modal .btn {
+            width: 100%;
+            padding: 16px;
+            font-size: 1.2rem;
+        }
+        .booking-modal .modal-content {
+            max-width: 550px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--navy-primary);
+            font-size: 0.9rem;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e0e7ef;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: border 0.2s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: var(--sky);
+            outline: none;
+        }
+        .booking-social {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .booking-social p {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--navy-primary);
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: #E6F3FF;
+            border-radius: 50%;
+            color: var(--navy-primary);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        .social-icons a:hover {
+            background: var(--sky);
+            color: white;
+            transform: translateY(-3px);
+        }
+        .copy-tooltip {
+            position: absolute;
+            background: var(--navy-primary);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            top: -30px;
+            right: 0;
+            opacity: 0;
+            transition: opacity 0.2s;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        .copy-tooltip.show {
+            opacity: 1;
+        }
+        @keyframes modalSlideIn {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* FOOTER (unchanged) */
+        footer {
+            background: var(--navy-deep);
+            color: #d0e0eb;
+            padding: 80px 5% 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .footer-col h4 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-family: var(--font-serif);
+            letter-spacing: 1.5px;
+        }
+        .footer-col p, .footer-col ul, .footer-col li {
+            color: #b6cdd9;
+            font-size: 0.98rem;
+            line-height: 1.8;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-col ul li i {
+            color: var(--sky);
+            width: 20px;
+            text-align: center;
+        }
+        .footer-col ul li a {
+            color: #b6cdd9;
+            transition: color 0.2s;
+        }
+        .footer-col ul li a:hover {
+            color: var(--sky);
+        }
+        .footer-logo {
+            max-width: 160px;
+            height: auto;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .social-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 1rem;
+        }
+        .social-item i {
+            width: 28px;
+            font-size: 1.3rem;
+            color: var(--sky);
+            text-align: center;
+            transition: color 0.2s;
+        }
+        .social-item i:hover {
+            color: white;
+        }
+        .social-item span {
+            color: #b6cdd9;
+        }
+        .newsletter input {
+            width: 100%;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 50px;
+            margin: 18px 0 14px;
+            font-family: var(--font-sans);
+            background: #1f3342;
+            color: white;
+            font-size: 0.95rem;
+        }
+        .newsletter input::placeholder {
+            color: #99b8c9;
+        }
+        .newsletter .btn {
+            width: 100%;
+            background: var(--sky);
+            border: none;
+            color: var(--navy-deep);
+            font-weight: 700;
+            padding: 14px 20px;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 70px;
+            padding-top: 35px;
+            border-top: 1px solid #2c4050;
+            color: #99b8c9;
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+        .yeti-icon {
+            display: inline-flex;
+            align-items: center;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .hero p { font-size: 1.3rem; }
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+    <div class="cloud cloud1"></div>
+    <div class="cloud cloud2"></div>
+    <div class="cloud cloud3"></div>
+
+    <header id="mainHeader">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="https://i.postimg.cc/635b83br/png.png" alt="Yeti Wings Logo">
+                <span class="logo-text">Yeti Wings</span>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="treks.html">Treks</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-top-bar">
+                <div class="top-left">
+                    <a href="mailto:infoyetiwings@gmail.com" class="email-link"><i class="fas fa-envelope"></i> infoyetiwings@gmail.com</a>
+                    <a href="https://www.facebook.com/people/YetiWings-Tours-Travels/61555792936999/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/yetiwings_tours_and_travels" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@yetiwings.tours.t" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/9779743926978" target="_blank" rel="noopener noreferrer" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+                <div class="top-right">
+                    <a href="#" class="plan-trip-btn" id="planTripBtn">Plan your next trip</a>
+                </div>
+            </div>
+            <div class="hero-content" data-aos="fade-up">
+                <h1>Discover the Himalayas with Yeti Wings</h1>
+                <p>Plan your perfect journey, from luxury escapes to adventure treks</p>
+                <div class="hero-buttons">
+                    <a href="domestic-tours.html" class="btn">Explore trips</a>
+                    <a href="services.html" class="btn btn-outline">Services</a>
+                </div>
+            </div>
+            <div class="scroll-down"><i class="fas fa-chevron-down"></i></div>
+        </section>
+
+        <!-- POPULAR TREKS & TOURS -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Popular Treks & Tours</h2>
+                <div class="tour-grid">
+                    <div class="tour-card" data-tour="everest" data-aos="fade-up">
+                        <span class="tour-badge">Best Seller</span>
+                        <img src="https://img.sanishtech.com/u/305c8523612466fc9b59129f4ec1c503.jpg" alt="Everest Base Camp">
+                        <h3 class="tour-title">Everest Base Camp</h3>
+                        <div class="tour-overlay">
+                            <div class="tour-meta"><span><i class="far fa-calendar-alt"></i> 14 days</span><span><i class="fas fa-tag"></i> $2,400</span></div>
+                            <p class="tour-description">Classic tea-house trek to the foot of the world's highest peak. Sherpa culture & stunning views.</p>
+                            <button class="btn btn-outline view-details-btn">View Details</button>
+                        </div>
+                    </div>
+                    <div class="tour-card" data-tour="annapurna" data-aos="fade-up" data-aos-delay="100">
+                        <span class="tour-badge moderate">Moderate</span>
+                        <img src="https://i.postimg.cc/XYTgWyd3/Untitled-1.jpg" alt="Annapurna Sanctuary">
+                        <h3 class="tour-title">Annapurna Sanctuary</h3>
+                        <div class="tour-overlay">
+                            <div class="tour-meta"><span><i class="far fa-calendar-alt"></i> 10 days</span><span><i class="fas fa-tag"></i> $1,800</span></div>
+                            <p class="tour-description">Walk through rhododendron forests to the ice amphitheatre of Annapurna. 360° mountain panorama.</p>
+                            <button class="btn btn-outline view-details-btn">View Details</button>
+                        </div>
+                    </div>
+                    <div class="tour-card" data-tour="bhutan" data-aos="fade-up" data-aos-delay="200">
+                        <span class="tour-badge luxury">Luxury</span>
+                        <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=600&q=80" alt="Luxury Bhutan">
+                        <h3 class="tour-title">Luxury Bhutan</h3>
+                        <div class="tour-overlay">
+                            <div class="tour-meta"><span><i class="far fa-calendar-alt"></i> 7 days</span><span><i class="fas fa-tag"></i> $3,200</span></div>
+                            <p class="tour-description">Discover the last Shangri-La in style. Paro Taktsang, Punakha Dzong, and 5‑star lodges.</p>
+                            <button class="btn btn-outline view-details-btn">View Details</button>
+                        </div>
+                    </div>
+                    <div class="tour-card" data-tour="flight" data-aos="fade-up" data-aos-delay="300">
+                        <span class="tour-badge">Popular</span>
+                        <img src="https://i.postimg.cc/T3B2dTkX/5d-1.jpg" alt="Mountain Flight">
+                        <h3 class="tour-title">Mountain Flight</h3>
+                        <div class="tour-overlay">
+                            <div class="tour-meta"><span><i class="far fa-calendar-alt"></i> 1 hour</span><span><i class="fas fa-tag"></i> $240</span></div>
+                            <p class="tour-description">Guaranteed window seat & certificate. Soar over Everest, Lhotse, and Ama Dablam.</p>
+                            <button class="btn btn-outline view-details-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- YETI WINGS BY NUMBERS -->
+        <section class="metrics">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Yeti Wings by Numbers</h2>
+                <div class="metrics-grid">
+                    <div class="metric-item" data-aos="fade-up"><i class="fas fa-mountain"></i><div class="metric-number" id="stat-years">0</div><div class="metric-label">Years of Excellence</div></div>
+                    <div class="metric-item" data-aos="fade-up" data-aos-delay="100"><i class="fas fa-hiking"></i><div class="metric-number" id="stat-travelers">0</div><div class="metric-label">Happy Travelers</div></div>
+                    <div class="metric-item" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-flag"></i><div class="metric-number" id="stat-countries">0</div><div class="metric-label">Destinations</div></div>
+                    <div class="metric-item" data-aos="fade-up" data-aos-delay="300"><i class="fas fa-heart"></i><div class="metric-number" id="stat-satisfaction">0</div><div class="metric-label">Satisfaction</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="testimonials">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">What Our Travelers Say</h2>
+                <div class="swiper mySwiper" data-aos="fade-up">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><div class="stars">★★★★★</div><p class="testimonial-quote">“Yeti Wings arranged everything flawlessly. Our Everest trek was smooth, guides were incredibly knowledgeable, and the views… pure magic!”</p><div class="guest"><img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Emily R."><div><h4>Emily R.</h4><span>Emily Roberts, USA</span></div></div></div>
+                        <div class="swiper-slide"><div class="stars">★★★★★</div><p class="testimonial-quote">“The Annapurna trek exceeded all expectations. Cozy lodges, delicious food, and the team took care of every little detail. Highly recommend!”</p><div class="guest"><img src="https://randomuser.me/api/portraits/men/32.jpg" alt="David L."><div><h4>David L.</h4><span>David Chen, Singapore</span></div></div></div>
+                        <div class="swiper-slide"><div class="stars">★★★★★</div><p class="testimonial-quote">“Luxury Bhutan was a dream. Yeti Wings arranged private guides, top hotels, and even a traditional hot stone bath. Pure bliss!”</p><div class="guest"><img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophie M."><div><h4>Sophie M.</h4><span>Sophie Müller, Germany</span></div></div></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE US -->
+        <section class="section">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Why Choose Us</h2>
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="zoom-in"><i class="fas fa-user-tie"></i><h4>Expert Local Guides</h4><p>Our guides are certified and passionate about sharing their Himalayan heritage.</p></div>
+                    <div class="feature-card" data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-shield-alt"></i><h4>Safety First</h4><p>Certified guides, emergency protocols, and comprehensive travel insurance.</p></div>
+                    <div class="feature-card" data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-leaf"></i><h4>Sustainable Travel</h4><p>We follow Leave No Trace principles and support local communities.</p></div>
+                    <div class="feature-card" data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-headset"></i><h4>24/7 Support</h4><p>We're here for you anytime, anywhere – before, during, and after your journey.</p></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col"><img src="https://i.postimg.cc/CKK7hqB9/full-removebg-preview.png" alt="Yeti Wings" class="footer-logo"><p>Explore the world with us. Nepal-based premium travel company, crafting authentic Himalayan experiences.</p></div>
+            <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="treks.html">Treks</a></li><li><a href="tours.html">Tours</a></li><li><a href="activities.html">Activities</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+            <div class="footer-col"><h4>Contact Us</h4><ul><li><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</li><li><i class="fas fa-phone-alt"></i> +977 974-3926978 / +977 974-3926979</li><li><i class="fas fa-envelope"></i> infoyetiwings@gmail.com</li></ul></div>
+            <div class="footer-col"><h4>Follow Us</h4><div class="social-links"><div class="social-item"><a href="https://www.facebook.com/people/YetiWings-Tours-Travels/61555792936999/" target="_blank"><i class="fab fa-facebook-f"></i></a><span>YetiWings Tours & Travels</span></div><div class="social-item"><a href="https://www.instagram.com/yetiwings_tours_and_travels" target="_blank"><i class="fab fa-instagram"></i></a><span>@yetiwings_tours_and_travels</span></div><div class="social-item"><a href="https://www.tiktok.com/@yetiwings.tours.t" target="_blank"><i class="fab fa-tiktok"></i></a><span>@yetiwings.tours.t</span></div><div class="social-item"><a href="https://wa.me/9779743926978" target="_blank"><i class="fab fa-whatsapp"></i></a><span>+977 974-3926978</span></div></div></div>
+            <div class="footer-col newsletter"><h4>Newsletter</h4><p>Get travel inspiration & exclusive offers</p><input type="email" placeholder="Your email address"><button class="btn">Subscribe</button></div>
+        </div>
+        <div class="footer-bottom">
+            <span class="yeti-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2C8 2 6 5 6 8c0 3 2 5 4 6-1 1-2 2-2 4h8c0-2-1-3-2-4 2-1 4-3 4-6 0-3-2-6-6-6z" fill="currentColor"/><circle cx="9" cy="8" r="1.5" fill="white"/><circle cx="15" cy="8" r="1.5" fill="white"/><path d="M10 13h4v2h-4z" fill="white"/></svg></span>
+            &copy; 2025 Yeti Wings Tours & Travels Pvt. Ltd. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+    <div id="modal-everest" class="modal"><div class="modal-content"><span class="modal-close">&times;</span><h2>Everest Base Camp Trek</h2><div class="modal-details"><div class="detail-item"><span class="detail-label">Duration</span><span class="detail-value">14 days</span></div><div class="detail-item"><span class="detail-label">Price</span><span class="detail-value">$2,400</span></div><div class="detail-item"><span class="detail-label">Difficulty</span><span class="detail-value">Challenging</span></div><div class="detail-item"><span class="detail-label">Max Altitude</span><span class="detail-value">5,545m</span></div><div class="detail-item"><span class="detail-label">Group Size</span><span class="detail-value">2-12 people</span></div><div class="detail-item"><span class="detail-label">Season</span><span class="detail-value">Mar-May, Sep-Nov</span></div></div><p class="modal-description">Follow in the footsteps of legends on this classic tea-house trek.</p><button class="btn book-now-btn" data-tour="Everest Base Camp">Book Now</button></div></div>
+    <div id="modal-annapurna" class="modal"><div class="modal-content"><span class="modal-close">&times;</span><h2>Annapurna Sanctuary Trek</h2><div class="modal-details"><div class="detail-item"><span class="detail-label">Duration</span><span class="detail-value">10 days</span></div><div class="detail-item"><span class="detail-label">Price</span><span class="detail-value">$1,800</span></div><div class="detail-item"><span class="detail-label">Difficulty</span><span class="detail-value">Moderate</span></div><div class="detail-item"><span class="detail-label">Max Altitude</span><span class="detail-value">4,130m</span></div><div class="detail-item"><span class="detail-label">Group Size</span><span class="detail-value">2-10 people</span></div><div class="detail-item"><span class="detail-label">Season</span><span class="detail-value">Mar-May, Oct-Nov</span></div></div><p class="modal-description">Walk through rhododendron forests to the ice amphitheatre of Annapurna.</p><button class="btn book-now-btn" data-tour="Annapurna Sanctuary">Book Now</button></div></div>
+    <div id="modal-bhutan" class="modal"><div class="modal-content"><span class="modal-close">&times;</span><h2>Luxury Bhutan Tour</h2><div class="modal-details"><div class="detail-item"><span class="detail-label">Duration</span><span class="detail-value">7 days</span></div><div class="detail-item"><span class="detail-label">Price</span><span class="detail-value">$3,200</span></div><div class="detail-item"><span class="detail-label">Difficulty</span><span class="detail-value">Easy</span></div><div class="detail-item"><span class="detail-label">Max Altitude</span><span class="detail-value">3,100m</span></div><div class="detail-item"><span class="detail-label">Group Size</span><span class="detail-value">2-8 people</span></div><div class="detail-item"><span class="detail-label">Season</span><span class="detail-value">Mar-May, Sep-Nov</span></div></div><p class="modal-description">Discover the Last Shangri-La in absolute comfort.</p><button class="btn book-now-btn" data-tour="Luxury Bhutan">Book Now</button></div></div>
+    <div id="modal-flight" class="modal"><div class="modal-content"><span class="modal-close">&times;</span><h2>Himalayan Mountain Flight</h2><div class="modal-details"><div class="detail-item"><span class="detail-label">Duration</span><span class="detail-value">1 hour</span></div><div class="detail-item"><span class="detail-label">Price</span><span class="detail-value">$240</span></div><div class="detail-item"><span class="detail-label">Aircraft Type</span><span class="detail-value">Airbus H130</span></div><div class="detail-item"><span class="detail-label">Window Guarantee</span><span class="detail-value">100% window seat</span></div><div class="detail-item"><span class="detail-label">In-flight Service</span><span class="detail-value">Commentary & refreshments</span></div><div class="detail-item"><span class="detail-label">Certificate</span><span class="detail-value">Personalised flight certificate</span></div></div><p class="modal-description">Soar over Everest, Lhotse, and Ama Dablam.</p><button class="btn book-now-btn" data-tour="Mountain Flight">Book Now</button></div></div>
+
+    <!-- Hidden iframe to prevent redirect -->
+    <iframe name="hiddenFrame" style="display:none;"></iframe>
+
+    <div id="bookingModal" class="modal booking-modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="bookingModalTitle">Book this tour</h2>
+            <div id="bookingFormContainer">
+                <form action="https://formsubmit.co/infoyetiwings@gmail.com" method="POST" target="hiddenFrame">
+                    <input type="hidden" name="_subject" value="New tour booking request from Yeti Wings website!">
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_next" value="about:blank">
+                    <div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div>
+                    <div class="form-group"><label>Email Address *</label><input type="email" name="email" required></div>
+                    <div class="form-group"><label>Phone Number</label><input type="tel" name="phone"></div>
+                    <div class="form-group"><label>Number of Travelers *</label><select name="travelers" required><option value="">Select</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5+</option></select></div>
+                    <div class="form-group"><label>Preferred Start Date</label><input type="date" name="date"></div>
+                    <div class="form-group"><label>Special Requests</label><textarea id="specialRequests" name="message" rows="3"></textarea></div>
+                    <button type="submit" class="btn" style="width:100%;">Submit Inquiry</button>
+                </form>
+                <div class="booking-social"><p>Or reach us directly:</p><div class="social-icons"><a href="https://www.facebook.com/people/YetiWings-Tours-Travels/61555792936999/" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/yetiwings_tours_and_travels" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://www.tiktok.com/@yetiwings.tours.t" target="_blank"><i class="fab fa-tiktok"></i></a><a href="https://wa.me/9779743926978" target="_blank"><i class="fab fa-whatsapp"></i></a><a href="#" id="emailIcon"><i class="fas fa-envelope"></i></a><span id="copyTooltip" class="copy-tooltip">Copied!</span></div></div>
+            </div>
+            <div id="formSuccessMessage" style="display:none; text-align:center; margin-top:20px;">
+                <i class="fas fa-check-circle" style="font-size:2rem; color:green;"></i>
+                <p style="margin:15px 0; color:green;">Thank you! Your inquiry has been sent. We'll get back to you soon.</p>
+                <button class="btn btn-outline" id="emailFallbackBtn" style="margin-bottom:10px; background:#25D366; color:white; border:none;">📧 Send via Email Client (Fallback)</button>
+                <button class="btn" id="closeSuccessBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        (function() {
+            AOS.init({ duration: 800, once: true });
+            const header = document.getElementById('mainHeader');
+            window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50));
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', (e) => { e.stopPropagation(); navLinks.classList.toggle('show'); });
+                document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { if (window.innerWidth <= 1024) navLinks.classList.remove('show'); }); });
+                window.addEventListener('click', (e) => { if (window.innerWidth <= 1024 && navLinks.classList.contains('show') && !header.contains(e.target)) navLinks.classList.remove('show'); });
+            }
+
+            const modals = { everest: document.getElementById('modal-everest'), annapurna: document.getElementById('modal-annapurna'), bhutan: document.getElementById('modal-bhutan'), flight: document.getElementById('modal-flight') };
+            const bookingModal = document.getElementById('bookingModal');
+            const bookingModalTitle = document.getElementById('bookingModalTitle');
+            const specialRequestsField = document.getElementById('specialRequests');
+            const formContainer = document.getElementById('bookingFormContainer');
+            const successDiv = document.getElementById('formSuccessMessage');
+            const closeSuccess = document.getElementById('closeSuccessBtn');
+            const emailFallback = document.getElementById('emailFallbackBtn');
+            const bookingForm = document.querySelector('#bookingModal form');
+
+            // On form submit, hide form and show success
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function(e) {
+                    formContainer.style.display = 'none';
+                    successDiv.style.display = 'block';
+                });
+            }
+
+            // Fallback: open email client with pre-filled data
+            if (emailFallback) {
+                emailFallback.addEventListener('click', function() {
+                    const name = document.querySelector('#bookingModal input[name="name"]').value;
+                    const email = document.querySelector('#bookingModal input[name="email"]').value;
+                    const phone = document.querySelector('#bookingModal input[name="phone"]').value;
+                    const travelers = document.querySelector('#bookingModal select[name="travelers"]').value;
+                    const date = document.querySelector('#bookingModal input[name="date"]').value;
+                    const message = document.querySelector('#bookingModal textarea[name="message"]').value;
+                    const tour = bookingModalTitle.textContent.replace('Book this tour: ', '');
+                    const subject = `Inquiry for ${tour}`;
+                    const body = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0ATravelers: ${travelers}%0APreferred Date: ${date}%0AMessage: ${message}`;
+                    window.location.href = `mailto:infoyetiwings@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                });
+            }
+
+            if (closeSuccess) {
+                closeSuccess.addEventListener('click', function() {
+                    bookingModal.classList.remove('show');
+                    document.body.style.overflow = '';
+                    setTimeout(() => {
+                        formContainer.style.display = 'block';
+                        successDiv.style.display = 'none';
+                        bookingForm.reset();
+                    }, 300);
+                });
+            }
+
+            window.openBookingModal = (tourName) => {
+                bookingModalTitle.textContent = `Book this tour: ${tourName}`;
+                if (specialRequestsField) specialRequestsField.value = '';
+                formContainer.style.display = 'block';
+                successDiv.style.display = 'none';
+                bookingForm.reset();
+                bookingModal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const planTripBtn = document.getElementById('planTripBtn');
+            if (planTripBtn) {
+                planTripBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    bookingModalTitle.textContent = 'Plan Your Himalayan Adventure';
+                    if (specialRequestsField) specialRequestsField.value = 'General trip planning inquiry – I\'d like to discuss my upcoming adventure.';
+                    formContainer.style.display = 'block';
+                    successDiv.style.display = 'none';
+                    bookingForm.reset();
+                    bookingModal.classList.add('show');
+                    document.body.style.overflow = 'hidden';
+                });
+            }
+
+            document.querySelectorAll('.view-details-btn').forEach(btn => btn.addEventListener('click', function(e) { e.preventDefault(); e.stopPropagation(); const tourType = this.closest('.tour-card').dataset.tour; if (tourType && modals[tourType]) { modals[tourType].classList.add('show'); document.body.style.overflow = 'hidden'; } }));
+            document.querySelectorAll('.book-now-btn').forEach(btn => btn.addEventListener('click', function(e) { e.preventDefault(); const tourName = this.dataset.tour; Object.values(modals).forEach(m => m.classList.remove('show')); openBookingModal(tourName); }));
+            document.querySelectorAll('.modal .modal-close').forEach(btn => btn.addEventListener('click', function() { this.closest('.modal').classList.remove('show'); document.body.style.overflow = ''; }));
+            window.addEventListener('click', e => { if (e.target.classList.contains('modal')) { e.target.classList.remove('show'); document.body.style.overflow = ''; } });
+            window.addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.modal.show').forEach(m => { m.classList.remove('show'); document.body.style.overflow = ''; }); });
+            const emailIcon = document.getElementById('emailIcon'), copyTooltip = document.getElementById('copyTooltip');
+            if (emailIcon) emailIcon.addEventListener('click', e => { e.preventDefault(); window.location.href = 'mailto:infoyetiwings@gmail.com'; navigator.clipboard.writeText('infoyetiwings@gmail.com').then(() => { copyTooltip.classList.add('show'); setTimeout(() => copyTooltip.classList.remove('show'), 2000); }); });
+            new Swiper('.mySwiper', { slidesPerView: 1, spaceBetween: 30, loop: true, autoplay: { delay: 5000 }, pagination: { el: '.swiper-pagination', clickable: true }, breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } } });
+
+            function animateNumber(el, start, end, dur, suffix='') {
+                if (!el) return;
+                let cur = start;
+                const step = (end - start) / (dur / 16);
+                const timer = setInterval(() => {
+                    cur += step;
+                    if (cur >= end) { el.innerText = end + suffix; clearInterval(timer); }
+                    else { el.innerText = Math.floor(cur) + suffix; }
+                }, 16);
+            }
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateNumber(document.getElementById('stat-years'), 0, 15, 1000, '+');
+                        animateNumber(document.getElementById('stat-travelers'), 0, 5000, 1500, '+');
+                        animateNumber(document.getElementById('stat-countries'), 0, 12, 1000, '+');
+                        animateNumber(document.getElementById('stat-satisfaction'), 0, 100, 1200, '%');
+                        obs.disconnect();
+                    }
+                });
+            }, { threshold: 0.3 });
+            obs.observe(document.querySelector('.metrics'));
+        })();
+    </script>
+</body>
+</html>
