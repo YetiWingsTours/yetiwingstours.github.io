@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <!-- SEO Meta -->
+    <title>Travel Services in Nepal | Yeti Wings Tours & Travels</title>
+    <meta name="description" content="Comprehensive travel services in Nepal – flight booking, hotel reservation, visa assistance, private transport, trekking permits, and more. Your one-stop travel solution.">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/635b83br/png.png">
+    <!-- Google Fonts: Playfair + Montserrat (same as Activities) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ---------- GLOBAL RESET & VARIABLES – exact copy from Activities ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        :root {
+            --sky: #87CEEB;
+            --sky-dark: #5fa8d3;
+            --sky-light: #E6F3FF;
+            --white: #FFFFFF;
+            --offwhite: #FAFAFA;
+            --dark: #1e2a3a;
+            --darker: #0e1a26;
+            --gray: #6c7a89;
+            --light-gray: #eef2f6;
+            --overlay: rgba(0, 0, 0, 0.5);
+            --shadow-sm: 0 10px 25px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 20px 40px rgba(0, 0, 0, 0.06);
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Montserrat', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --border-radius: 12px;
+        }
+        body {
+            font-family: var(--font-sans);
+            color: var(--dark);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, .logo-text, .serif-heading {
+            font-family: var(--font-serif);
+            font-weight: 900;
+            letter-spacing: 0.02em;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        .container {
+            width: 90%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: 60px 0;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--dark);
+            position: relative;
+            font-weight: 900;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 3px;
+            background: var(--sky);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--sky);
+            color: var(--white);
+            font-weight: 600;
+            border-radius: 40px;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn:hover {
+            background-color: var(--sky-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 22px rgba(135,206,235,0.3);
+        }
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--sky);
+            color: var(--sky);
+        }
+        .btn-outline:hover {
+            background: var(--sky);
+            color: var(--white);
+        }
+        .btn-small {
+            padding: 8px 18px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== NEW GLASS MORPHISM HEADER (copied from tours page) ===== */
+        header { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            display: flex; 
+            justify-content: center; 
+            background: transparent; 
+            z-index: 1000; 
+            transition: all 0.3s ease; 
+            padding: 20px 2% 20px 3%; 
+        }
+        /* FIX 1: Add position relative to .header-container for mobile menu positioning */
+        .header-container { 
+            width: 100%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            transition: all 0.3s cubic-bezier(0.165,0.84,0.44,1); 
+            position: relative;
+        }
+        .logo-area { 
+            display: flex; 
+            align-items: center; 
+            gap: 12px; 
+        }
+        .logo-area img { 
+            height: 45px; 
+            width: auto; 
+            display: block; 
+            transition: height 0.3s ease; 
+        }
+        .logo-text { 
+            font-family: 'Playfair Display', serif; 
+            font-weight: 900; 
+            font-size: 1.4rem; 
+            letter-spacing: 2px; 
+            color: #1e2a3a; 
+            transition: font-size 0.3s ease; 
+        }
+        .nav-links { 
+            display: flex; 
+            list-style: none; 
+            gap: 28px; 
+            margin: 0; 
+            padding: 0; 
+        }
+        .nav-links li a { 
+            color: #1e2a3a; 
+            font-weight: 600; 
+            font-size: 1rem; 
+            text-decoration: none; 
+            padding: 8px 0; 
+            border-bottom: 2px solid transparent; 
+            transition: border-color 0.2s, color 0.2s; 
+        }
+        .nav-links li a:hover, .nav-links li.active a { 
+            border-bottom-color: #87CEEB; 
+            color: #87CEEB; 
+        }
+        .hamburger { 
+            display: none; 
+        }
+        header.scrolled { 
+            padding: 12px 5% 12px 3%; 
+        }
+        header.scrolled .header-container { 
+            background: rgba(255,255,255,0.55); 
+            backdrop-filter: blur(16px) saturate(200%); 
+            border-radius: 80px; 
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.8); 
+            border: 0.5px solid rgba(255,255,255,0.6); 
+            background-image: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.05), rgba(255,255,255,0.2)); 
+            padding: 6px 24px; 
+        }
+        @media (max-width: 1024px) {
+            header { padding: 15px 2% 15px 4%; }
+            .nav-links { 
+                display: none; 
+                position: absolute; 
+                top: 100%; 
+                right: 0; 
+                width: 220px; 
+                background: rgba(255,255,255,0.92); 
+                backdrop-filter: blur(20px); 
+                border-radius: 30px; 
+                padding: 20px; 
+                gap: 20px; 
+                text-align: center; 
+                flex-direction: column; 
+                box-shadow: 0 12px 30px rgba(0,0,0,0.1); 
+                border: 0.5px solid rgba(255,255,255,0.6); 
+            }
+            .nav-links.show { display: flex; }
+            .hamburger { 
+                display: block; 
+                font-size: 2rem; 
+                color: #1e2a3a; 
+                cursor: pointer; 
+                background: none; 
+                border: none; 
+                line-height: 1; 
+            }
+            .logo-area img { height: 40px; }
+            .logo-text { font-size: 1.2rem; }
+        }
+
+        /* ---------- PAGE HEADER – no hero ---------- */
+        .page-header {
+            padding: 120px 0 20px;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 2.8rem;
+            color: var(--dark);
+            font-family: var(--font-serif);
+            margin-bottom: 12px;
+        }
+        .page-header .subhead {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ---------- PROCESS TIMELINE ---------- */
+        .process-section {
+            margin: 20px 0 60px;
+            text-align: center;
+        }
+        .section-subtitle {
+            font-size: 2rem;
+            font-family: var(--font-serif);
+            margin-bottom: 30px;
+            color: var(--dark);
+            font-weight: 700;
+        }
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .process-step {
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            text-align: left;
+        }
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: var(--sky);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        .step-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+            font-family: var(--font-serif);
+        }
+        .step-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .process-steps { flex-direction: column; gap: 20px; }
+        }
+
+        /* ---------- SERVICES GRID – 4 columns + time badge ---------- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        .card-img {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+        }
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .service-card:hover .card-img img {
+            transform: scale(1.05);
+        }
+        .time-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            backdrop-filter: blur(4px);
+            letter-spacing: 0.3px;
+            z-index: 2;
+        }
+        .time-badge i {
+            font-size: 0.7rem;
+        }
+        .card-content {
+            padding: 20px 18px 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-content h3 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--dark);
+        }
+        .service-icon {
+            color: var(--sky);
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .card-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+        .btn-inquire {
+            background: transparent;
+            border: 2px solid var(--sky);
+            color: var(--sky);
+            font-weight: 700;
+            padding: 10px 16px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: auto;
+            font-size: 0.95rem;
+            width: fit-content;
+        }
+        .btn-inquire:hover {
+            background: var(--sky);
+            color: white;
+        }
+        @media (max-width: 1100px) { .services-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 800px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 500px) { .services-grid { grid-template-columns: 1fr; } }
+
+        /* ---------- CLIENT TESTIMONIALS ---------- */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .testimonial-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid #f0f0f0;
+        }
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        .testimonial-rating {
+            color: #ffb83b;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        .testimonial-text {
+            color: var(--dark);
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        .testimonial-author strong {
+            display: block;
+            color: var(--dark);
+            font-size: 1rem;
+        }
+        .testimonial-author span {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+        @media (max-width: 768px) {
+            .testimonials-grid { grid-template-columns: 1fr; gap: 20px; }
+        }
+
+        /* ---------- WHY CHOOSE & POPULAR ---------- */
+        .why-grid, .popular-grid {
+           display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .why-card, .popular-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid #f5f5f5;
+        }
+        .why-card i, .popular-card i {
+            font-size: 2.5rem;
+            color: var(--sky);
+            margin-bottom: 20px;
+        }
+        .why-card h4, .popular-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-family: var(--font-serif);
+        }
+        .why-card p, .popular-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        .popular-card { cursor: pointer; }
+        @media (max-width: 1024px) { .why-grid, .popular-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .why-grid, .popular-grid { grid-template-columns: 1fr; } }
+
+        /* ---------- FAQ ACCORDION ---------- */
+        .faq-container {
+            max-width: 800px;
+            margin: 30px auto 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid #e5e9f0;
+            margin-bottom: 15px;
+        }
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        .faq-question i {
+            transition: transform 0.3s;
+            color: var(--sky);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 0 0 15px;
+            color: var(--gray);
+        }
+        .faq-answer.active {
+            max-height: 200px;
+            padding-bottom: 20px;
+        }
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+
+        /* ---------- MODAL (service forms) – with social handles exactly like Activities page ---------- */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal.show {
+            display: flex;
+            opacity: 1;
+        }
+        .modal-content {
+            background: white;
+            max-width: 550px;
+            width: 95%;
+            border-radius: 24px;
+            padding: 40px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: var(--shadow-lg);
+        }
+        .modal-close {
+            position: absolute;
+            top: 20px; right: 25px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+        .modal h2 {
+            font-family: var(--font-serif);
+            margin-bottom: 25px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            font-family: var(--font-sans);
+        }
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        .half { flex: 1; }
+        .btn-full { width: 100%; }
+
+        /* Fix 4: Status message styling */
+        #formStatus {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 0.9rem;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        /* Booking modal social block (exactly as Activities) */
+        .booking-social {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .booking-social p {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        /* Fix 3: position relative for .social-icons to keep tooltip near icon */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: var(--sky-light);
+            border-radius: 50%;
+            color: var(--dark);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        .social-icons a:hover {
+            background: var(--sky);
+            color: white;
+            transform: translateY(-3px);
+        }
+        .copy-tooltip {
+            position: absolute;
+            background: var(--dark);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            top: -30px;
+            right: 0;
+            opacity: 0;
+            transition: opacity 0.2s;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+        .copy-tooltip.show {
+            opacity: 1;
+        }
+
+        /* ---------- WHATSAPP FLOATING BUTTON ---------- */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: var(--transition);
+            z-index: 999;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+            color: white;
+        }
+        .whatsapp-tooltip {
+            position: absolute;
+            right: 70px;
+            background: var(--dark);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            pointer-events: none;
+        }
+        .whatsapp-float:hover .whatsapp-tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 80px;
+        }
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 1.5rem;
+            }
+        }
+
+        /* ---------- FOOTER – exactly as Activities page ---------- */
+        footer {
+            background: var(--darker);
+            color: #d0e0eb;
+            padding: 80px 5% 40px;
+            margin-top: 80px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 50px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .footer-col h4 {
+            color: white;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-family: var(--font-serif);
+            letter-spacing: 1.5px;
+        }
+        .footer-col p, .footer-col ul, .footer-col li {
+            color: #b6cdd9;
+            font-size: 0.98rem;
+            line-height: 1.8;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-col ul li i {
+            color: var(--sky);
+            width: 20px;
+            text-align: center;
+        }
+        .footer-col ul li a {
+            color: #b6cdd9;
+            transition: color 0.2s;
+        }
+        .footer-col ul li a:hover {
+            color: var(--sky);
+        }
+        .footer-logo {
+            max-width: 160px;
+            height: auto;
+            margin-bottom: 20px;
+            display: block;
+        }
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .social-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 1rem;
+        }
+        .social-item i {
+            width: 28px;
+            font-size: 1.3rem;
+            color: var(--sky);
+            text-align: center;
+            transition: color 0.2s;
+        }
+        .social-item i:hover {
+            color: white;
+        }
+        .social-item span {
+            color: #b6cdd9;
+        }
+        .newsletter input {
+            width: 100%;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 50px;
+            margin: 18px 0 14px;
+            background: #1f3342;
+            color: white;
+            font-size: 0.95rem;
+        }
+        .newsletter input::placeholder {
+            color: #99b8c9;
+        }
+        .newsletter .btn {
+            width: 100%;
+            background: var(--sky);
+            border: none;
+            color: var(--darker);
+            font-weight: 700;
+            padding: 14px 20px;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 70px;
+            padding-top: 35px;
+            border-top: 1px solid #2c4050;
+            color: #99b8c9;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- GLASS MORPHISM HEADER -->
+    <header id="mainHeader">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="https://i.postimg.cc/635b83br/png.png" alt="Yeti Wings Logo">
+                <span class="logo-text">Yeti Wings</span>
+            </div>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="treks.html">Treks</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li class="active"><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- PAGE TITLE – NO HERO -->
+            <div class="page-header">
+                <h1>Our Services</h1>
+                <div class="subhead">Comprehensive travel solutions tailored to your needs – from flights to permits, we've got you covered</div>
+            </div>
+
+            <!-- PROCESS TIMELINE -->
+            <div class="process-section">
+                <h3 class="section-subtitle">How It Works</h3>
+                <div class="process-steps">
+                    <div class="process-step"><div class="step-number">1</div><div class="step-content"><h4>Tell us what you need</h4><p>Click "Inquire now" on any service and tell us your requirements</p></div></div>
+                    <div class="process-step"><div class="step-number">2</div><div class="step-content"><h4>We quote & confirm</h4><p>Our team responds within 24 hours with options and pricing</p></div></div>
+                    <div class="process-step"><div class="step-number">3</div><div class="step-content"><h4>We deliver</h4><p>Your service is confirmed and delivered as promised</p></div></div>
+                </div>
+            </div>
+
+            <!-- TRUST BADGES SECTION (REMOVED AS REQUESTED) -->
+
+            <!-- SERVICES GRID (dynamic) -->
+            <div id="servicesGridContainer" class="services-grid"></div>
+
+            <!-- CLIENT TESTIMONIALS -->
+            <section class="section" id="testimonials">
+                <h2 class="section-title">What Our Clients Say</h2>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card"><div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"Yeti Wings handled my flight and visa perfectly. The team was responsive and professional. Highly recommended!"</p><div class="testimonial-author"><strong>Sarah Johnson</strong><span>USA • Flight + Visa</span></div></div>
+                    <div class="testimonial-card"><div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"We booked our entire Nepal trip through Yeti Wings. Hotels, transport, permits – everything was seamless. Thank you!"</p><div class="testimonial-author"><strong>David Chen</strong><span>Singapore • Group Tour</span></div></div>
+                    <div class="testimonial-card"><div class="testimonial-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p class="testimonial-text">"The trekking permits were ready when I arrived. No hassle, no paperwork stress. Will definitely use again!"</p><div class="testimonial-author"><strong>Michael Brown</strong><span>UK • Trekking Permits</span></div></div>
+                </div>
+            </section>
+
+            <!-- WHY CHOOSE US -->
+            <section class="section" id="why-choose-us">
+                <h2 class="section-title">Why Choose Our Services?</h2>
+                <div class="why-grid">
+                    <div class="why-card"><i class="fas fa-clock"></i><h4>Quick & Efficient</h4><p>Fast processing times for all your travel needs</p></div>
+                    <div class="why-card"><i class="fas fa-hand-holding-usd"></i><h4>Best Price Guarantee</h4><p>Competitive rates with no hidden fees</p></div>
+                    <div class="why-card"><i class="fas fa-headset"></i><h4>24/7 Support</h4><p>Round-the-clock assistance during your trip</p></div>
+                    <div class="why-card"><i class="fas fa-check-circle"></i><h4>Reliable & Trusted</h4><p>Years of experience serving happy travelers</p></div>
+                </div>
+            </section>
+
+            <!-- POPULAR SERVICES -->
+            <section class="section" id="popular-services">
+                <h2 class="section-title">Popular Services</h2>
+                <div class="popular-grid" id="popularServicesGrid"></div>
+            </section>
+
+            <!-- FAQ ACCORDION -->
+            <section class="section">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item"><div class="faq-question"><span>How fast can you book flights?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Instant confirmation for most domestic flights; international within few hours.</div></div>
+                    <div class="faq-item"><div class="faq-question"><span>Do I need to pay in advance?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">A deposit may be required, but we offer flexible options.</div></div>
+                    <div class="faq-item"><div class="faq-question"><span>Can I cancel a service?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Yes, terms vary by service. We'll guide you.</div></div>
+                    <div class="faq-item"><div class="faq-question"><span>What's your response time?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">We typically respond within 2–4 hours during business days.</div></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- FOOTER – with social links -->
+    <footer id="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <img src="https://i.postimg.cc/CKK7hqB9/full-removebg-preview.png" alt="Yeti Wings" class="footer-logo">
+                <p>Explore the world with us. Nepal‑based premium travel company, crafting authentic Himalayan experiences.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="treks.html">Treks</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</li>
+                    <li><i class="fas fa-phone-alt"></i> +977 974-3926978 / +977 974-3926979</li>
+                    <li><i class="fas fa-envelope"></i> infoyetiwings@gmail.com</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <div class="social-item">
+                        <a href="https://www.facebook.com/people/YetiWings-Tours-Travels/61555792936999/?mibextid=wwXIfr&rdid=pzcRsNmD4HB9tAMv&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Aaqgy4PeR%2F" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <span>YetiWings Tours & Travels</span>
+                    </div>
+                    <div class="social-item">
+                        <a href="https://www.instagram.com/yetiwings_tours_and_travels?igsh=MWRzZnI2Ym5zdDN0MQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <span>@yetiwings_tours_and_travels</span>
+                    </div>
+                    <div class="social-item">
+                        <a href="https://www.tiktok.com/@yetiwings.tours.t?_r=1&_t=ZS-93rI6KipMAR" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                        <span>@yetiwings.tours.t</span>
+                    </div>
+                    <div class="social-item">
+                        <a href="https://wa.me/9779743926978" target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <span>+977 974-3926978</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-col newsletter">
+                <h4>Newsletter</h4>
+                <p>Get travel inspiration & exclusive offers</p>
+                <input type="email" id="newsletterEmail" placeholder="Your email address">
+                <button class="btn" id="newsletterBtn">Subscribe</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Yeti Wings Tours & Travels Pvt. Ltd. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOATING BUTTON -->
+    <a href="https://wa.me/9779743926978" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat with us</span>
+    </a>
+
+    <!-- BOOKING MODAL – with FormSubmit and social handles (AJAX version) -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="bookingModalTitle">Inquire about this service</h2>
+            <div id="bookingFormContainer">
+                <!-- default form will be replaced by JS, but we keep container -->
+            </div>
+            <div class="booking-social">
+                <p>Or reach us directly:</p>
+                <div class="social-icons" style="position: relative;">
+                    <a href="https://www.facebook.com/people/YetiWings-Tours-Travels/61555792936999/?mibextid=wwXIfr&rdid=pzcRsNmD4HB9tAMv&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1Aaqgy4PeR%2F" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/yetiwings_tours_and_travels?igsh=MWRzZnI2Ym5zdDN0MQ%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@yetiwings.tours.t?_r=1&_t=ZS-93rI6KipMAR" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/9779743926978" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" id="emailIcon" class="email-icon"><i class="fas fa-envelope"></i></a>
+                    <span id="copyTooltip" class="copy-tooltip">Copied!</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // ---------- SERVICES DATA (12 items) ----------
+            const services = [
+                { name: "Flight Booking", icon: "fas fa-plane", description: "International & domestic flights at best prices", processingTime: "Instant confirmation", img: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80" },
+                { name: "Hotel Reservation", icon: "fas fa-hotel", description: "Hand-picked accommodations for every budget", processingTime: "Instant confirmation", img: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&q=80" },
+                { name: "Visa Assistance", icon: "fas fa-passport", description: "Hassle-free Nepal visa processing", processingTime: "3-5 working days", img: "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=600&q=80" },
+                { name: "Private Transport", icon: "fas fa-car", description: "Comfortable vehicles with experienced drivers", processingTime: "24 hours", img: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80" },
+                { name: "Travel Insurance", icon: "fas fa-shield-alt", description: "Comprehensive coverage for peace of mind", processingTime: "Instant", img: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&q=80" },
+                { name: "Group Tours", icon: "fas fa-users", description: "Join like-minded travelers on fixed departures", processingTime: "48 hours", img: "https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=600&q=80" },
+                { name: "Trekking Permits", icon: "fas fa-map-signs", description: "TIMs, ACAP, and all necessary permits", processingTime: "24 hours", img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80" },
+                { name: "SIM Card Arrangement", icon: "fas fa-sim-card", description: "Stay connected with local SIM cards", processingTime: "Ready on arrival", img: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=80" },
+                { name: "Custom Itinerary Planning", icon: "fas fa-calendar-alt", description: "Tailor-made trips designed just for you", processingTime: "3-5 days", img: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=600&q=80" },
+                { name: "Helicopter Charter", icon: "fas fa-helicopter", description: "Luxury helicopter tours and charters", processingTime: "24 hours", img: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&q=80" },
+                { name: "VFS Appointments", icon: "fas fa-file-signature", description: "Visa application support for other countries", processingTime: "5-7 working days", img: "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?w=600&q=80" },
+                { name: "Gear Rental", icon: "fas fa-hiking", description: "Quality trekking gear for your adventure", processingTime: "Instant", img: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=600&q=80" }
+            ];
+
+            // ---------- RENDER SERVICES GRID ----------
+            const container = document.getElementById('servicesGridContainer');
+            function renderServices() {
+                let html = '';
+                services.forEach(s => {
+                    html += `<div class="service-card" data-service="${s.name}">
+                        <div class="card-img">
+                            <img src="${s.img}" alt="${s.name}">
+                            <span class="time-badge"><i class="far fa-clock"></i> ${s.processingTime}</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="service-icon"><i class="${s.icon}"></i></div>
+                            <h3>${s.name}</h3>
+                            <p>${s.description}</p>
+                            <button class="btn-inquire inquire-btn" data-service="${s.name}">Inquire now</button>
+                        </div>
+                    </div>`;
+                });
+                container.innerHTML = html;
+            }
+            renderServices();
+
+            // ---------- POPULAR SERVICES ----------
+            const popularGrid = document.getElementById('popularServicesGrid');
+            const popularNames = ["Flight Booking", "Trekking Permits", "Private Transport"];
+            const popularItems = services.filter(s => popularNames.includes(s.name));
+            let popularHtml = '';
+            popularItems.forEach(s => {
+                popularHtml += `<div class="popular-card" data-service="${s.name}"><i class="${s.icon}"></i><h4>${s.name}</h4><p>${s.description}</p></div>`;
+            });
+            popularGrid.innerHTML = popularHtml;
+
+            // ---------- SERVICE-SPECIFIC FORMS (AJAX ready, no action/method, with id="bookingForm") ----------
+            const serviceForms = {
+                "Flight Booking": `<form id="bookingForm"><input type="hidden" name="_subject" value="Flight Booking Inquiry"><input type="hidden" name="_captcha" value="true"><div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div><div class="form-group"><label>Email *</label><input type="email" name="email" required></div><div class="form-group"><label>Phone</label><input type="tel" name="phone"></div><div class="form-row"><div class="form-group half"><label>From</label><input type="text" name="from" placeholder="Departure city" required></div><div class="form-group half"><label>To</label><input type="text" name="to" placeholder="Destination" required></div></div><div class="form-row"><div class="form-group half"><label>Departure Date</label><input type="date" name="departure"></div><div class="form-group half"><label>Return Date</label><input type="date" name="return"></div></div><div class="form-group"><label>Passengers</label><select name="passengers"><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></div><div class="form-group"><label>Additional Requirements</label><textarea name="message" rows="3"></textarea></div><button type="submit" class="btn btn-full">Send Inquiry</button><div id="formStatus"></div></form>`,
+                "Hotel Reservation": `<form id="bookingForm"><input type="hidden" name="_subject" value="Hotel Booking Inquiry"><input type="hidden" name="_captcha" value="true"><div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div><div class="form-group"><label>Email *</label><input type="email" name="email" required></div><div class="form-group"><label>Phone</label><input type="tel" name="phone"></div><div class="form-group"><label>Destination / City *</label><input type="text" name="destination" required></div><div class="form-row"><div class="form-group half"><label>Check-in</label><input type="date" name="checkin"></div><div class="form-group half"><label>Check-out</label><input type="date" name="checkout"></div></div><div class="form-group"><label>Rooms & Guests</label><input type="text" name="guests" placeholder="e.g., 2 adults, 1 child"></div><div class="form-group"><label>Room Preference</label><select name="room"><option>Standard</option><option>Deluxe</option><option>Suite</option><option>Budget</option></select></div><div class="form-group"><label>Special Requests</label><textarea name="message" rows="3"></textarea></div><button type="submit" class="btn btn-full">Send Inquiry</button><div id="formStatus"></div></form>`,
+                "Visa Assistance": `<form id="bookingForm"><input type="hidden" name="_subject" value="Visa Assistance Inquiry"><input type="hidden" name="_captcha" value="true"><div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div><div class="form-group"><label>Email *</label><input type="email" name="email" required></div><div class="form-group"><label>Phone</label><input type="tel" name="phone"></div><div class="form-group"><label>Nationality *</label><input type="text" name="nationality" required></div><div class="form-group"><label>Visa Type *</label><select name="visaType" required><option>Tourist Visa</option><option>Business Visa</option><option>Transit Visa</option><option>Multiple Entry</option></select></div><div class="form-group"><label>Passport Number</label><input type="text" name="passport"></div><div class="form-group"><label>Travel Dates</label><input type="text" name="travelDates" placeholder="Approximate dates"></div><div class="form-group"><label>Additional Questions</label><textarea name="message" rows="3"></textarea></div><button type="submit" class="btn btn-full">Send Inquiry</button><div id="formStatus"></div></form>`,
+                "default": `<form id="bookingForm"><input type="hidden" name="_subject" value="Service Inquiry"><input type="hidden" name="_captcha" value="true"><div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div><div class="form-group"><label>Email *</label><input type="email" name="email" required></div><div class="form-group"><label>Phone</label><input type="tel" name="phone"></div><div class="form-group"><label>Your Requirements</label><textarea name="message" rows="4" placeholder="Please tell us what you need..." required></textarea></div><button type="submit" class="btn btn-full">Send Inquiry</button><div id="formStatus"></div></form>`
+            };
+
+            const modal = document.getElementById('bookingModal');
+            const modalTitle = document.getElementById('bookingModalTitle');
+            const formContainer = document.getElementById('bookingFormContainer');
+            const closeModal = document.querySelector('.modal-close');
+            const emailIcon = document.getElementById('emailIcon');
+            const copyTooltip = document.getElementById('copyTooltip');
+            const emailAddress = 'infoyetiwings@gmail.com';
+
+            if (emailIcon) {
+                emailIcon.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.href = `mailto:${emailAddress}`;
+                    navigator.clipboard.writeText(emailAddress).then(() => {
+                        copyTooltip.classList.add('show');
+                        setTimeout(() => copyTooltip.classList.remove('show'), 2000);
+                    }).catch(err => console.error('Copy failed', err));
+                });
+            }
+
+            window.openServiceForm = function(serviceName) {
+                modalTitle.textContent = `Inquire about: ${serviceName}`;
+                formContainer.innerHTML = serviceForms[serviceName] || serviceForms.default;
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+                // Re-attach AJAX handler because form is dynamically inserted
+                attachFormHandler();
+            };
+
+            function attachFormHandler() {
+                const bookingForm = document.getElementById('bookingForm');
+                if (bookingForm && !bookingForm.hasAttribute('data-listener')) {
+                    bookingForm.setAttribute('data-listener', 'true');
+                    bookingForm.addEventListener('submit', async function(e) {
+                        e.preventDefault();
+                        const submitBtn = bookingForm.querySelector('button[type="submit"]');
+                        const originalBtnText = submitBtn.innerText;
+                        submitBtn.disabled = true;
+                        submitBtn.innerText = 'Sending...';
+                        const formStatusDiv = document.getElementById('formStatus');
+                        if (formStatusDiv) formStatusDiv.innerHTML = '';
+                        const formData = new FormData(bookingForm);
+                        let serviceName = modalTitle.innerText.replace('Inquire about: ', '');
+                        if (serviceName && !serviceName.includes('Plan Your')) {
+                            formData.append('service', serviceName);
+                        }
+                        try {
+                            const response = await fetch('https://formsubmit.co/ajax/infoyetiwings@gmail.com', {
+                                method: 'POST',
+                                body: formData
+                            });
+                            const result = await response.json();
+                            if (result.success === 'true' || response.ok) {
+                                if (formStatusDiv) formStatusDiv.innerHTML = '<span style="color: #2e7d32;">✓ Thank you! We’ll get back to you within 24 hours.</span>';
+                                bookingForm.reset();
+                                setTimeout(() => {
+                                    modal.classList.remove('show');
+                                    document.body.style.overflow = '';
+                                    if (formStatusDiv) formStatusDiv.innerHTML = '';
+                                }, 3000);
+                            } else {
+                                throw new Error('Server error');
+                            }
+                        } catch (error) {
+                            if (formStatusDiv) formStatusDiv.innerHTML = '<span style="color: #c62828;">⚠️ There was a problem. Please email us directly at infoyetiwings@gmail.com or try again later.</span>';
+                        } finally {
+                            submitBtn.disabled = false;
+                            submitBtn.innerText = originalBtnText;
+                        }
+                    });
+                }
+            }
+
+            document.body.addEventListener('click', (e) => {
+                const btn = e.target.closest('.inquire-btn, .popular-card');
+                if (btn) {
+                    e.preventDefault();
+                    const service = btn.dataset.service;
+                    if (service) openServiceForm(service);
+                }
+            });
+
+            closeModal.addEventListener('click', () => {
+                modal.classList.remove('show');
+                document.body.style.overflow = '';
+            });
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('show');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // FAQ toggle
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', function() {
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle('active');
+                    this.classList.toggle('active');
+                    if (answer.style.maxHeight) {
+                        answer.style.maxHeight = null;
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    }
+                });
+            });
+
+            // ---------- HEADER FUNCTIONALITY (scroll & hamburger) ----------
+            const header = document.getElementById('mainHeader');
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) header.classList.add('scrolled');
+                else header.classList.remove('scrolled');
+            });
+            
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    navLinks.classList.toggle('show');
+                });
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (window.innerWidth <= 1024) navLinks.classList.remove('show');
+                    });
+                });
+                window.addEventListener('click', (e) => {
+                    if (window.innerWidth <= 1024 && navLinks.classList.contains('show') && !header.contains(e.target)) {
+                        navLinks.classList.remove('show');
+                    }
+                });
+            }
+
+            // ---------- FIX 2: NEWSLETTER SUBSCRIPTION FUNCTIONALITY ----------
+            const newsletterBtn = document.getElementById('newsletterBtn');
+            const newsletterEmail = document.getElementById('newsletterEmail');
+            if (newsletterBtn) {
+                newsletterBtn.addEventListener('click', function() {
+                    const email = newsletterEmail.value.trim();
+                    if (email && email.includes('@')) {
+                        window.location.href = `mailto:infoyetiwings@gmail.com?subject=Newsletter Subscription&body=Please subscribe this email to newsletter: ${email}`;
+                        alert('Thank you! We will add you to our newsletter list.');
+                        newsletterEmail.value = '';
+                    } else {
+                        alert('Please enter a valid email address.');
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
