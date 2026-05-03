@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Nepal Trekking Packages | Yeti Wings Tours & Travels</title>
+    <meta name="description" content="Explore the best trekking packages in Nepal with Yeti Wings. Everest, Annapurna, Langtang, Manaslu – expert guides, guaranteed departures.">
+    <meta name="keywords" content="Nepal trekking, Everest Base Camp trek, Annapurna Base Camp, Langtang trek, Manaslu Circuit, Gokyo Lakes, Ruby Valley Trek">
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/635b83br/png.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ---------- GLOBAL RESET & VARIABLES ---------- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --sky: #87CEEB; --sky-dark: #5fa8d3; --sky-light: #E6F3FF;
+            --white: #FFFFFF; --offwhite: #FAFAFA; --dark: #1e2a3a; --darker: #0e1a26;
+            --gray: #6c7a89; --light-gray: #eef2f6; --overlay: rgba(0,0,0,0.5);
+            --shadow-sm: 0 10px 25px rgba(0,0,0,0.03); --shadow-lg: 0 20px 40px rgba(0,0,0,0.06);
+            --font-serif: 'Playfair Display', serif; --font-sans: 'Montserrat', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.165,0.84,0.44,1); --border-radius: 12px;
+        }
+        body { font-family: var(--font-sans); color: var(--dark); background-color: var(--white); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3, h4, .logo-text, .serif-heading { font-family: var(--font-serif); font-weight: 900; letter-spacing: 0.02em; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        .container { width: 90%; max-width: 1400px; margin: 0 auto; }
+        .section { padding: 80px 0; }
+        .section-title { font-size: 2.5rem; margin-bottom: 20px; text-align: center; color: var(--dark); position: relative; font-weight: 900; }
+        .section-title:after { content: ''; display: block; width: 70px; height: 3px; background: var(--sky); margin: 15px auto 0; border-radius: 2px; }
+        .btn { display: inline-block; padding: 12px 30px; background-color: var(--sky); color: var(--white); font-weight: 600; border-radius: 40px; transition: var(--transition); border: 2px solid transparent; font-size: 1rem; cursor: pointer; text-align: center; }
+        .btn:hover { background-color: var(--sky-dark); transform: translateY(-3px); box-shadow: 0 12px 22px rgba(135,206,235,0.3); }
+        .btn-outline { background: transparent; border: 2px solid var(--sky); color: var(--sky); }
+        .btn-outline:hover { background: var(--sky); color: var(--white); }
+        .btn-small { padding: 8px 18px; font-size: 0.9rem; }
+
+        /* ===== HEADER: logo always small; glass bar appears only on scroll ===== */
+        header { position: fixed; top: 0; left: 0; width: 100%; display: flex; justify-content: center; background: transparent; z-index: 1000; transition: all 0.3s ease; padding: 20px 2% 20px 3%; }
+        .header-container { width: 100%; display: flex; align-items: center; justify-content: space-between; transition: all 0.3s cubic-bezier(0.165,0.84,0.44,1); }
+        .logo-area { display: flex; align-items: center; gap: 12px; }
+        .logo-area img { height: 45px; width: auto; display: block; transition: height 0.3s ease; }
+        .logo-text { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.4rem; letter-spacing: 2px; color: #1e2a3a; transition: font-size 0.3s ease; }
+        .nav-links { display: flex; list-style: none; gap: 28px; margin: 0; padding: 0; }
+        .nav-links li a { color: #1e2a3a; font-weight: 600; font-size: 1rem; text-decoration: none; padding: 8px 0; border-bottom: 2px solid transparent; transition: border-color 0.2s, color 0.2s; }
+        .nav-links li a:hover { border-bottom-color: #87CEEB; color: #87CEEB; }
+        .hamburger { display: none; }
+        header.scrolled { padding: 12px 5% 12px 3%; }
+        header.scrolled .header-container { background: rgba(255,255,255,0.55); backdrop-filter: blur(16px) saturate(200%); border-radius: 80px; box-shadow: 0 8px 25px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.8); border: 0.5px solid rgba(255,255,255,0.6); background-image: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.05), rgba(255,255,255,0.2)); padding: 6px 24px; }
+        @media (max-width: 1024px) {
+            header { padding: 15px 2% 15px 4%; }
+            .nav-links { display: none; position: absolute; top: 100%; right: 0; width: 220px; background: rgba(255,255,255,0.92); backdrop-filter: blur(20px); border-radius: 30px; padding: 20px; gap: 20px; text-align: center; flex-direction: column; box-shadow: 0 12px 30px rgba(0,0,0,0.1); border: 0.5px solid rgba(255,255,255,0.6); }
+            .nav-links.show { display: flex; }
+            .hamburger { display: block; font-size: 2rem; color: #1e2a3a; cursor: pointer; background: none; border: none; line-height: 1; }
+            .logo-area img { height: 40px; }
+            .logo-text { font-size: 1.2rem; }
+        }
+        .page-header { padding: 100px 0 30px; }
+        .header-title h1 { font-size: 2rem; color: var(--dark); margin-bottom: 5px; }
+        .header-title p { font-size: 1rem; color: var(--gray); margin-bottom: 20px; }
+        .filter-area { display: flex; align-items: center; gap: 10px; background: var(--offwhite); padding: 10px 20px; border-radius: 40px; width: fit-content; }
+        .filter-area label { font-weight: 600; color: var(--dark); font-size: 0.9rem; }
+        .filter-area select { padding: 8px 16px; border: 1px solid #ddd; border-radius: 30px; font-family: var(--font-sans); background: white; cursor: pointer; outline: none; font-size: 0.9rem; }
+        @media (max-width: 768px) { .page-header { padding: 120px 0 20px; } .filter-area { width: 100%; } }
+
+        /* ---------- TREK CARDS (unchanged) ---------- */
+        .trek-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-top: 20px; }
+        .trek-card { position: relative; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition); aspect-ratio: 3/4; cursor: pointer; }
+        .trek-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+        .trek-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+        .trek-card:hover img { transform: scale(1.05); }
+        .trek-title { position: absolute; bottom: 0; left: 0; width: 100%; margin: 0; padding: 20px 20px 15px; background: linear-gradient(to top, rgba(0,0,0,0.85), transparent); color: white; font-size: 1.4rem; font-weight: 900; font-family: var(--font-serif); letter-spacing: 1px; z-index: 2; transition: opacity 0.3s ease; }
+        .trek-card:hover .trek-title { opacity: 0; }
+        .trek-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.7)); display: flex; flex-direction: column; justify-content: flex-end; padding: 25px 20px; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease; color: white; z-index: 3; }
+        .trek-card:hover .trek-overlay { opacity: 1; visibility: visible; }
+        .trek-overlay .trek-meta { display: flex; justify-content: space-between; margin: 0 0 10px 0; font-weight: 600; color: rgba(255,255,255,0.95); transform: translateY(20px); transition: transform 0.4s ease 0.05s; font-size: 0.85rem; }
+        .trek-card:hover .trek-overlay .trek-meta { transform: translateY(0); }
+        .trek-overlay .trek-meta i { color: var(--sky); margin-right: 4px; }
+        .trek-difficulty { display: inline-block; margin-bottom: 8px; color: var(--sky); font-weight: 600; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; transform: translateY(20px); transition: transform 0.4s ease 0.075s; }
+        .trek-card:hover .trek-difficulty { transform: translateY(0); }
+        .trek-overlay .trek-description { color: rgba(255,255,255,0.85); margin-bottom: 12px; font-size: 0.8rem; line-height: 1.5; transform: translateY(20px); transition: transform 0.4s ease 0.1s; }
+        .trek-card:hover .trek-overlay .trek-description { transform: translateY(0); }
+        .trek-overlay .price { font-size: 1.2rem; font-weight: 700; color: var(--sky); margin-bottom: 8px; transform: translateY(20px); transition: transform 0.4s ease 0.125s; }
+        .trek-card:hover .trek-overlay .price { transform: translateY(0); }
+        .trek-overlay .rating { color: #ffb83b; margin-bottom: 15px; font-size: 0.8rem; transform: translateY(20px); transition: transform 0.4s ease 0.15s; }
+        .trek-card:hover .trek-overlay .rating { transform: translateY(0); }
+        .trek-overlay .rating span { color: rgba(255,255,255,0.8); margin-left: 5px; }
+        .trek-overlay .card-buttons { display: flex; gap: 10px; transform: translateY(20px); transition: transform 0.4s ease 0.175s; }
+        .trek-card:hover .trek-overlay .card-buttons { transform: translateY(0); }
+        .trek-overlay .btn { padding: 8px 12px; font-size: 0.8rem; flex: 1; }
+        .trek-overlay .btn-outline { background: transparent; border: 2px solid var(--sky); color: white; }
+        .trek-overlay .btn-outline:hover { background: var(--sky); color: var(--dark); }
+        @media (hover: none) {
+            .trek-overlay { opacity: 1; visibility: visible; background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.6)); }
+            .trek-title { opacity: 0; }
+            .trek-overlay .trek-meta, .trek-overlay .trek-difficulty, .trek-overlay .trek-description, .trek-overlay .price, .trek-overlay .rating, .trek-overlay .card-buttons { transform: translateY(0); }
+        }
+
+        /* ---------- MODAL STYLES (unchanged) ---------- */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); z-index: 2000; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease; }
+        .modal.show { display: flex; opacity: 1; }
+        .modal-content { background: white; width: 95%; max-width: 1300px; max-height: 90vh; overflow-y: auto; border-radius: 24px; padding: 30px; position: relative; box-shadow: var(--shadow-lg); animation: modalSlideIn 0.4s ease; }
+        .modal-close { position: absolute; top: 20px; right: 25px; font-size: 2rem; cursor: pointer; color: var(--gray); transition: color 0.2s; line-height: 1; z-index: 10; }
+        .modal-close:hover { color: var(--dark); }
+        .modal-header { margin-bottom: 20px; padding-right: 40px; }
+        .modal-header h2 { font-size: 2.2rem; color: var(--dark); font-family: var(--font-serif); margin-bottom: 8px; }
+        .modal-header .rating-large { color: #ffb83b; font-size: 1.2rem; margin-bottom: 10px; }
+        .modal-header .rating-large span { color: var(--gray); margin-left: 8px; font-size: 1rem; }
+        .modal-header .quick-meta { display: flex; flex-wrap: wrap; gap: 20px; margin: 15px 0; font-size: 1rem; }
+        .quick-meta-item i { color: var(--sky); margin-right: 6px; }
+        .modal-actions { display: flex; gap: 15px; margin-bottom: 25px; flex-wrap: wrap; }
+        .modal-actions .btn { padding: 10px 25px; font-size: 0.95rem; }
+        .modal-two-col { display: grid; grid-template-columns: 1fr 0.9fr; gap: 30px; margin-top: 10px; }
+        .itinerary-section h3 { font-size: 1.6rem; font-family: var(--font-serif); margin-bottom: 20px; padding-bottom: 8px; border-bottom: 3px solid var(--sky); display: inline-block; }
+        .accordion-item { border: 1px solid #eaeef2; border-radius: 10px; margin-bottom: 12px; overflow: hidden; }
+        .accordion-header { background: #f5f7fa; padding: 15px 20px; cursor: pointer; display: flex; align-items: center; justify-content: space-between; font-weight: 600; transition: background 0.2s; border-left: 4px solid var(--sky); }
+        .accordion-header:hover { background: #e0e7ef; }
+        .accordion-header .day-title { font-family: var(--font-serif); font-size: 1.1rem; color: var(--dark); }
+        .accordion-header i { color: var(--sky); transition: transform 0.3s; }
+        .accordion-header.active i { transform: rotate(180deg); }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: white; padding: 0 20px; }
+        .accordion-content p { padding: 15px 0; color: var(--gray); line-height: 1.7; border-top: 1px solid #eef2f6; }
+        .stay-overnight { display: block; margin-top: 10px; font-style: italic; color: #6c7a89; font-size: 0.95rem; }
+        .stay-overnight i { color: var(--sky); margin-right: 6px; }
+        .essentials-section { background: var(--offwhite); border-radius: 16px; padding: 25px; }
+        .essentials-section h3 { font-size: 1.6rem; font-family: var(--font-serif); margin-bottom: 20px; padding-bottom: 8px; border-bottom: 3px solid var(--sky); display: inline-block; }
+        .essentials-block { margin-bottom: 30px; }
+        .essentials-block h4 { font-size: 1.2rem; margin-bottom: 15px; display: flex; align-items: center; gap: 8px; font-family: var(--font-serif); }
+        .inclusion-list, .exclusion-list { list-style: none; }
+        .inclusion-list li, .exclusion-list li { margin-bottom: 12px; display: flex; align-items: flex-start; gap: 12px; }
+        .inclusion-list li i { color: #2ecc71; font-size: 1.1rem; margin-top: 3px; }
+        .exclusion-list li i { color: #e74c3c; font-size: 1.1rem; margin-top: 3px; }
+        .quick-info-box { background: var(--sky-light); border-radius: 16px; padding: 20px; margin-top: 20px; }
+        .quick-info-item { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; font-size: 1rem; }
+        .quick-info-item i { color: var(--sky); width: 24px; text-align: center; }
+        @media (max-width: 1024px) { .modal-two-col { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .modal-content { padding: 20px; } .modal-header h2 { font-size: 1.8rem; } }
+
+        /* ---------- BOOKING INQUIRY MODAL ---------- */
+        .booking-modal .modal-content { max-width: 550px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 6px; color: var(--dark); font-size: 0.9rem; }
+        .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 16px; border: 1px solid #e0e7ef; border-radius: 8px; font-size: 0.95rem; transition: border 0.2s; }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--sky); outline: none; }
+        .booking-social { margin-top: 30px; text-align: center; }
+        .booking-social p { font-weight: 600; margin-bottom: 15px; color: var(--dark); }
+        .social-icons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; position: relative; }
+        .social-icons a { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; background: var(--sky-light); border-radius: 50%; color: var(--dark); font-size: 1.5rem; transition: var(--transition); }
+        .social-icons a:hover { background: var(--sky); color: white; transform: translateY(-3px); }
+        .copy-tooltip { position: absolute; background: var(--dark); color: white; padding: 6px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; top: -30px; right: 0; opacity: 0; transition: opacity 0.2s; pointer-events: none; white-space: nowrap; }
+        .copy-tooltip.show { opacity: 1; }
+        #formStatus { margin-top: 15px; text-align: center; font-size: 0.9rem; padding: 8px; border-radius: 8px; } /* Added for AJAX form */
+
+        /* ---------- OTHER SECTIONS ---------- */
+        .why-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-top: 30px; }
+        .why-card { background: white; border-radius: 16px; padding: 30px 20px; text-align: center; box-shadow: var(--shadow-sm); border: 1px solid #f5f5f5; }
+        .why-card i { font-size: 2.5rem; color: var(--sky); margin-bottom: 20px; }
+        .why-card h4 { font-size: 1.2rem; margin-bottom: 10px; font-family: var(--font-serif); }
+        .why-card p { font-size: 0.9rem; color: var(--gray); }
+        .seasons-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-top: 30px; }
+        .season-card { background: white; border-radius: 16px; padding: 30px 20px; text-align: center; box-shadow: var(--shadow-sm); border: 1px solid #f5f5f5; }
+        .season-card i { font-size: 2rem; color: var(--sky); margin-bottom: 15px; }
+        .season-card h4 { font-size: 1.3rem; margin-bottom: 10px; font-family: var(--font-serif); }
+        .faq-container { max-width: 800px; margin: 30px auto 0; }
+        .faq-item { border-bottom: 1px solid #e5e9f0; margin-bottom: 15px; }
+        .faq-question { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; cursor: pointer; font-weight: 600; color: var(--dark); }
+        .faq-question i { transition: transform 0.3s; }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; padding: 0 0 0 15px; color: var(--gray); }
+        .faq-answer.active { max-height: 200px; padding-bottom: 20px; }
+        .faq-question.active i { transform: rotate(180deg); }
+        footer { background: var(--darker); color: #d0e0eb; padding: 80px 5% 40px; margin-top: 80px; }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 50px; max-width: 1400px; margin: 0 auto; }
+        .footer-col h4 { color: white; font-size: 1.3rem; margin-bottom: 25px; font-family: var(--font-serif); letter-spacing: 1.5px; }
+        .footer-col p, .footer-col ul, .footer-col li { color: #b6cdd9; font-size: 0.98rem; line-height: 1.8; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+        .footer-col ul li i { color: var(--sky); width: 20px; text-align: center; }
+        .footer-col ul li a { color: #b6cdd9; transition: color 0.2s; }
+        .footer-col ul li a:hover { color: var(--sky); }
+        .footer-logo { max-width: 160px; height: auto; margin-bottom: 20px; display: block; }
+        .social-links { display: flex; flex-direction: column; gap: 16px; }
+        .social-item { display: flex; align-items: center; gap: 14px; font-size: 1rem; }
+        .social-item i { width: 28px; font-size: 1.3rem; color: var(--sky); text-align: center; transition: color 0.2s; }
+        .social-item i:hover { color: white; }
+        .social-item span { color: #b6cdd9; }
+        .newsletter input { width: 100%; padding: 14px 20px; border: none; border-radius: 50px; margin: 18px 0 14px; background: #1f3342; color: white; font-size: 0.95rem; }
+        .newsletter input::placeholder { color: #99b8c9; }
+        .newsletter .btn { width: 100%; background: var(--sky); border: none; color: var(--darker); font-weight: 700; padding: 14px 20px; }
+        .footer-bottom { text-align: center; margin-top: 70px; padding-top: 35px; border-top: 1px solid #2c4050; color: #99b8c9; font-size: 0.95rem; }
+
+        @media (max-width: 1200px) { .trek-grid { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 1024px) { .trek-grid { grid-template-columns: repeat(2, 1fr); } .why-grid { grid-template-columns: repeat(2, 1fr); } .seasons-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .trek-grid { grid-template-columns: 1fr; } .why-grid { grid-template-columns: 1fr; } .seasons-grid { grid-template-columns: 1fr; } .modal-content { padding: 20px; } }
+    </style>
+</head>
+<body>
+    <header id="mainHeader">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="https://i.postimg.cc/635b83br/png.png" alt="Yeti Wings Logo">
+                <span class="logo-text">Yeti Wings</span>
+            </div>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="treks.html">Treks</a></li>
+                    <li><a href="tours.html">Tours</a></li>
+                    <li><a href="activities.html">Activities</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <div class="header-title"><h1>Nepal Trekking Packages</h1><p>Choose your next adventure in the Himalayas</p></div>
+                <div class="filter-area"><label for="regionFilter">Filter by region:</label><select id="regionFilter"><option value="all">All Regions</option><option value="Everest">Everest Region</option><option value="Annapurna">Annapurna Region</option><option value="Langtang">Langtang Region</option><option value="Manaslu">Manaslu Region</option><option value="Others">Others</option></select></div>
+            </div>
+            <div class="trek-grid" id="trekGrid"></div>
+
+            <section class="section"><h2 class="section-title">Why Trek with Yeti Wings?</h2><div class="why-grid"><div class="why-card"><i class="fas fa-hiking"></i><h4>Expert Local Guides</h4><p>Certified, English-speaking, first-aid trained</p></div><div class="why-card"><i class="fas fa-shield-alt"></i><h4>Safety First</h4><p>Satellite phones, pulse oximeters, emergency plans</p></div><div class="why-card"><i class="fas fa-leaf"></i><h4>Sustainable Tourism</h4><p>Leave no trace, community support</p></div><div class="why-card"><i class="fas fa-calendar-check"></i><h4>Flexible Booking</h4><p>Free cancellation up to 30 days</p></div></div></section>
+
+            <section class="section"><h2 class="section-title">Trekking Seasons</h2><div class="seasons-grid"><div class="season-card"><i class="fas fa-seedling"></i><h4>Spring</h4><p>March – May</p><small>Rhododendrons bloom, stable weather, Everest & Annapurna</small></div><div class="season-card"><i class="fas fa-leaf"></i><h4>Autumn</h4><p>September – November</p><small>Crystal clear skies, peak season, all regions</small></div><div class="season-card"><i class="fas fa-snowflake"></i><h4>Winter</h4><p>December – February</p><small>Fewer crowds, lower altitude treks (Poon Hill, Langtang)</small></div></div></section>
+
+            <section class="section"><h2 class="section-title">Frequently Asked Questions</h2><div class="faq-container"><div class="faq-item"><div class="faq-question"><span>What fitness level do I need?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Moderate fitness is sufficient for most treks. You should be able to walk 5–7 hours daily. Prior trekking experience is helpful but not mandatory.</div></div><div class="faq-item"><div class="faq-question"><span>When is the best time to trek?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Spring (Mar–May) and Autumn (Sep–Nov) offer the most stable weather and clear mountain views. Winter is good for lower altitude treks.</div></div><div class="faq-item"><div class="faq-question"><span>Do I need a guide and porter?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Yes, it is mandatory to have a licensed guide for trekking in Nepal. Porters are optional but highly recommended to enhance your experience.</div></div><div class="faq-item"><div class="faq-question"><span>What is included in the trek price?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">Accommodation, meals during trek, permits, TIMS card, licensed guide, porters, and all land transportation. International flights are not included.</div></div><div class="faq-item"><div class="faq-question"><span>How do I book a trek?</span><i class="fas fa-chevron-down"></i></div><div class="faq-answer">You can book directly through our website, or contact us via email/phone. A 20% deposit is required to confirm your booking.</div></div></div></section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col"><img src="https://i.postimg.cc/CKK7hqB9/full-removebg-preview.png" alt="Yeti Wings" class="footer-logo"><p style="margin-bottom:20px;">Explore the world with us. Nepal-based premium travel company, crafting authentic Himalayan experiences.</p></div>
+            <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="treks.html">Treks</a></li><li><a href="tours.html">Tours</a></li><li><a href="activities.html">Activities</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+            <div class="footer-col"><h4>Contact Us</h4><ul><li><i class="fas fa-map-marker-alt"></i> Thamel, Kathmandu, Nepal</li><li><i class="fas fa-phone-alt"></i> +977 974-3926978 / +977 974-3926979</li><li><i class="fas fa-envelope"></i> infoyetiwings@gmail.com</li></ul></div>
+            <div class="footer-col"><h4>Follow Us</h4><div class="social-links"><div class="social-item"><a href="https://www.facebook.com/people/YetiWings-Tours-Travels/61555792936999/" target="_blank"><i class="fab fa-facebook-f"></i></a><span>YetiWings Tours & Travels</span></div><div class="social-item"><a href="https://www.instagram.com/yetiwings_tours_and_travels" target="_blank"><i class="fab fa-instagram"></i></a><span>@yetiwings_tours_and_travels</span></div><div class="social-item"><a href="https://www.tiktok.com/@yetiwings.tours.t" target="_blank"><i class="fab fa-tiktok"></i></a><span>@yetiwings.tours.t</span></div><div class="social-item"><a href="https://wa.me/9779743926978" target="_blank"><i class="fab fa-whatsapp"></i></a><span>+977 974-3926978</span></div></div></div>
+            <div class="footer-col newsletter"><h4>Newsletter</h4><p>Get travel inspiration & exclusive offers</p><input type="email" placeholder="Your email address"><button class="btn">Subscribe</button></div>
+        </div>
+        <div class="footer-bottom">&copy; 2025 Yeti Wings Tours & Travels Pvt. Ltd. All rights reserved.</div>
+    </footer>
+
+    <div id="trekModal" class="modal"><div class="modal-content"><span class="modal-close">&times;</span><div id="modalHeader" class="modal-header"></div><div class="modal-actions"><button id="printBtn" class="btn">🖨️ Print Itinerary</button><button id="modalBookNowBtn" class="btn">Book Now</button></div><div class="modal-two-col"><div class="itinerary-section"><h3>Detailed Itinerary</h3><div id="itineraryAccordion" class="itinerary-accordion"></div></div><div class="essentials-section"><h3>Trip Essentials</h3><div id="essentialsContent"></div></div></div></div></div>
+    <div id="bookingModal" class="modal booking-modal"><div class="modal-content"><span class="modal-close">&times;</span><h2 id="bookingModalTitle">Book this trek</h2><div id="bookingFormContainer"><form id="bookingForm"><input type="hidden" name="_subject" value="New trek booking request from Yeti Wings website!"><input type="hidden" name="_captcha" value="true"><div class="form-group"><label>Full Name *</label><input type="text" name="name" required></div><div class="form-group"><label>Email Address *</label><input type="email" name="email" required></div><div class="form-group"><label>Phone Number</label><input type="tel" name="phone"></div><div class="form-group"><label>Number of Travelers *</label><select name="travelers" required><option value="">Select</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5+</option></select></div><div class="form-group"><label>Preferred Start Date</label><input type="date" name="date"></div><div class="form-group"><label>Special Requests</label><textarea id="specialRequests" name="message" rows="3"></textarea></div><button type="submit" class="btn" style="width:100%;">Submit Inquiry</button><div id="formStatus"></div></form><div class="booking-social"><p>Or reach us directly:</p><div class="social-icons"><a href="https://www.facebook.com/people/YetiWings-Tours-Travels/61555792936999/" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="https://www.instagram.com/yetiwings_tours_and_travels" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://www.tiktok.com/@yetiwings.tours.t" target="_blank"><i class="fab fa-tiktok"></i></a><a href="https://wa.me/9779743926978" target="_blank"><i class="fab fa-whatsapp"></i></a><a href="#" id="emailIcon"><i class="fas fa-envelope"></i></a><span id="copyTooltip" class="copy-tooltip">Copied!</span></div></div></div></div></div>
+
+    <script>
+        (function() {
+            "use strict";
+            const header = document.getElementById('mainHeader');
+            window.addEventListener('scroll', () => header.classList.toggle('scrolled', window.scrollY > 50));
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', (e) => { e.stopPropagation(); navLinks.classList.toggle('show'); });
+                document.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', () => { if (window.innerWidth <= 1024) navLinks.classList.remove('show'); }));
+                window.addEventListener('click', (e) => { if (window.innerWidth <= 1024 && navLinks.classList.contains('show') && !header.contains(e.target)) navLinks.classList.remove('show'); });
+            }
+
+            // ---------- FULL TREK DATA (16 treks, complete) ----------
+            const treks = [
+                {
+                    name: "Everest Base Camp Trek", region: "Everest", days: 14, difficulty: "Challenging", maxAlt: "5,364m", price: 1450, description: "Classic Himalayan trek to the foot of the world's highest peak.", rating: 4.9, img: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&q=80",
+                    fullDesc: "Follow in the footsteps of legends. This iconic trek takes you through Sherpa villages, ancient monasteries, and offers breathtaking views of Everest, Lhotse, and Ama Dablam.",
+                    itineraryDays: [ { day: 1, title: "Arrive Kathmandu (1,400m)", desc: "Meet your guide, transfer to hotel. Welcome dinner and trek briefing.", overnight: "Kathmandu" }, { day: 2, title: "Fly to Lukla (2,800m), trek to Phakding (2,610m)", desc: "Scenic 30-minute flight. Begin trek, 3-4 hours to Phakding.", overnight: "Phakding" }, { day: 3, title: "Trek to Namche Bazaar (3,440m)", desc: "5-6 hours trek, crossing Hillary Bridge, first views of Everest.", overnight: "Namche Bazaar" }, { day: 4, title: "Acclimatization day at Namche", desc: "Hike to Everest View Hotel for spectacular views. Explore Namche.", overnight: "Namche Bazaar" }, { day: 5, title: "Trek to Tengboche (3,860m)", desc: "5 hours through rhododendron forests. Visit Tengboche Monastery.", overnight: "Tengboche" }, { day: 6, title: "Trek to Dingboche (4,410m)", desc: "5-6 hours gradual ascent.", overnight: "Dingboche" }, { day: 7, title: "Acclimatization day at Dingboche", desc: "Hike to Nagarjun Hill for panoramic views.", overnight: "Dingboche" }, { day: 8, title: "Trek to Lobuche (4,910m)", desc: "5 hours following glacial moraine, passing climbers' memorials.", overnight: "Lobuche" }, { day: 9, title: "Trek to Gorakshep (5,160m), hike to EBC (5,364m)", desc: "6-7 hours, reach base camp, return to Gorakshep.", overnight: "Gorak Shep" }, { day: 10, title: "Hike Kala Patthar (5,545m), trek to Pheriche (4,280m)", desc: "Pre-dawn hike for best Everest views, then descend.", overnight: "Pheriche" }, { day: 11, title: "Return trek to Lukla", desc: "Descend through familiar trails.", overnight: "Namche Bazaar" }, { day: 12, title: "Return trek to Lukla", desc: "Continue descent.", overnight: "Lukla" }, { day: 13, title: "Fly back to Kathmandu", desc: "Morning flight, free afternoon.", overnight: "Kathmandu" }, { day: 14, title: "Final Departure", desc: "Transfer to airport for international flight.", overnight: "" } ],
+                    inclusions: [ "All airport transfers", "Accommodation in teahouses during trek, hotels in Kathmandu", "Three meals a day during trek", "Experienced English-speaking guide", "Porter service (2 trekkers : 1 porter)", "First aid kit and safety equipment", "All permits (Sagarmatha National Park, TIMS)" ],
+                    exclusions: [ "International airfare", "Nepal visa fee", "Travel insurance (mandatory)", "Personal expenses (drinks, snacks, hot showers)", "Tips for guide and porter", "Meals in Kathmandu" ],
+                    quickInfo: { maxAltitude: "5,364m", difficulty: "Challenging", bestSeason: "March–May, September–November", groupSize: "2–12 people", accommodation: "Tea houses + hotels" }
+                },
+                {
+                    name: "Gokyo Lakes Trek", region: "Everest", days: 12, difficulty: "Moderate", maxAlt: "5,357m", price: 1250, description: "Turquoise lakes and incredible views of Everest from Gokyo Ri.", rating: 4.8, img: "https://images.unsplash.com/photo-1516557070061-c3d1653fa646?w=600&q=80",
+                    fullDesc: "A less crowded alternative to EBC. Trek to the world's highest freshwater lake system, climb Gokyo Ri, and witness Everest, Cho Oyu, and Makalu.",
+                    itineraryDays: [ { day: 1, title: "Arrive Kathmandu", desc: "Arrival, transfer to hotel. Trek preparation.", overnight: "Kathmandu" }, { day: 2, title: "Fly to Lukla, trek to Phakding", desc: "Fly to Lukla, trek 3-4 hours to Phakding.", overnight: "Phakding" }, { day: 3, title: "Trek to Namche Bazaar", desc: "5-6 hours to Namche, acclimatization.", overnight: "Namche Bazaar" }, { day: 4, title: "Acclimatization at Namche", desc: "Hike to Everest View Hotel, explore Namche.", overnight: "Namche Bazaar" }, { day: 5, title: "Trek to Dole (4,200m)", desc: "5 hours through forests and villages.", overnight: "Dole" }, { day: 6, title: "Trek to Machhermo (4,470m)", desc: "4-5 hours, stunning mountain views.", overnight: "Machhermo" }, { day: 7, title: "Trek to Gokyo (4,790m)", desc: "5 hours, first views of Gokyo Lakes.", overnight: "Gokyo" }, { day: 8, title: "Hike Gokyo Ri (5,357m), explore lakes", desc: "Sunrise hike, explore lakes.", overnight: "Gokyo" }, { day: 9, title: "Trek to Dole", desc: "5-6 hours descent.", overnight: "Dole" }, { day: 10, title: "Trek to Namche", desc: "6 hours.", overnight: "Namche Bazaar" }, { day: 11, title: "Trek to Lukla", desc: "6 hours.", overnight: "Lukla" }, { day: 12, title: "Fly to Kathmandu", desc: "Morning flight, departure.", overnight: "" } ],
+                    inclusions: [ "All permits", "Guide", "Porter", "Accommodation as per itinerary", "Meals during trek" ], exclusions: [ "International flights", "Visa", "Insurance", "Personal expenses" ],
+                    quickInfo: { maxAltitude: "5,357m", difficulty: "Moderate", bestSeason: "March–May, September–November", groupSize: "2–12", accommodation: "Tea houses" }
+                },
+                {
+                    name: "Everest Panorama Trek", region: "Everest", days: 8, difficulty: "Moderate", maxAlt: "3,870m", price: 1100, description: "Shorter trek with great views of Everest, Thame and Khumjung villages.", rating: 4.7, img: "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=600&q=80",
+                    fullDesc: "Perfect for those short on time. Experience Sherpa culture, visit ancient monasteries, and enjoy stunning mountain vistas without the high altitude.",
+                    itineraryDays: [ { day: 1, title: "Arrive Kathmandu", desc: "Arrival, transfer to hotel.", overnight: "Kathmandu" }, { day: 2, title: "Fly to Lukla, trek to Phakding", desc: "Fly to Lukla, trek to Phakding.", overnight: "Phakding" }, { day: 3, title: "Trek to Namche Bazaar", desc: "Trek to Namche, acclimatization.", overnight: "Namche Bazaar" }, { day: 4, title: "Acclimatization – hike to Khumjung village", desc: "Hike to Khumjung, visit monastery.", overnight: "Khumjung" }, { day: 5, title: "Trek to Thame (3,800m)", desc: "Trek to Thame, explore village.", overnight: "Thame" }, { day: 6, title: "Trek back to Namche", desc: "Return to Namche.", overnight: "Namche Bazaar" }, { day: 7, title: "Trek to Lukla", desc: "Trek to Lukla.", overnight: "Lukla" }, { day: 8, title: "Fly to Kathmandu", desc: "Fly to Kathmandu, departure.", overnight: "" } ],
+                    inclusions: [ "All permits", "Guide", "Porter", "Accommodation", "Meals during trek" ], exclusions: [ "International flights", "Visa", "Insurance", "Personal expenses" ],
+                    quickInfo: { maxAltitude: "3,870m", difficulty: "Moderate", bestSeason: "March–May, September–November", groupSize: "2–12", accommodation: "Tea houses" }
+                },
+                {
+                    name: "Three Passes Trek", region: "Everest", days: 20, difficulty: "Challenging", maxAlt: "5,545m", price: 2100, description: "Ultimate high-altitude trek crossing Renjo La, Cho La, and Kongma La.", rating: 4.9, img: "https://images.unsplash.com/photo-1516557070061-c3d1653fa646?w=600&q=80",
+                    fullDesc: "For experienced trekkers. Cross three high passes, visit Gokyo and EBC, and experience the full grandeur of the Everest region.",
+                    itineraryDays: [ { day: 1, title: "Arrive Kathmandu", desc: "Arrival, hotel.", overnight: "Kathmandu" }, { day: 2, title: "Fly to Lukla – Trek to Phakding", desc: "Fly to Lukla, trek to Phakding.", overnight: "Phakding" }, { day: 3, title: "Trek to Namche", desc: "Trek to Namche.", overnight: "Namche Bazaar" }, { day: 4, title: "Acclimatization", desc: "Acclimatization day.", overnight: "Namche Bazaar" }, { day: 5, title: "Trek to Thame", desc: "Trek to Thame.", overnight: "Thame" }, { day: 6, title: "Cross Renjo La (5,360m) to Gokyo", desc: "Cross pass, descend to Gokyo.", overnight: "Gokyo" }, { day: 7, title: "Gokyo Ri & lakes", desc: "Hike Gokyo Ri, explore lakes.", overnight: "Gokyo" }, { day: 8, title: "Trek to Thagnak", desc: "Trek to Thagnak.", overnight: "Thagnak" }, { day: 9, title: "Cross Cho La (5,420m) to Dzonglha", desc: "Cross Cho La.", overnight: "Dzonglha" }, { day: 10, title: "Trek to Lobuche", desc: "Trek to Lobuche.", overnight: "Lobuche" }, { day: 11, title: "Everest Base Camp & Kala Patthar", desc: "Hike to EBC and Kala Patthar.", overnight: "Gorak Shep" }, { day: 12, title: "Cross Kongma La (5,535m) to Chhukung", desc: "Cross final pass.", overnight: "Chhukung" }, { day: 13, title: "Trek to Namche", desc: "Descend to Namche.", overnight: "Namche Bazaar" }, { day: 14, title: "Trek to Lukla", desc: "Trek to Lukla.", overnight: "Lukla" }, { day: 15, title: "Fly to Kathmandu", desc: "Fly to Kathmandu.", overnight: "Kathmandu" }, { day: 16, title: "Departure", desc: "Departure.", overnight: "" } ],
+                    inclusions: [ "All permits", "Guide", "Porter", "Accommodation", "Meals during trek" ], exclusions: [ "International flights", "Visa", "Insurance", "Personal expenses" ],
+                    quickInfo: { maxAltitude: "5,545m", difficulty: "Challenging", bestSeason: "March–May, September–November", groupSize: "2–10", accommodation: "Tea houses / camping" }
+                },
+                {
+                    name: "Annapurna Base Camp Trek", region: "Annapurna", days: 10, difficulty: "Moderate", maxAlt: "4,130m", price: 950, description: "Beautiful trek through diverse landscapes to the Annapurna Sanctuary.", rating: 4.8, img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80",
+                    fullDesc: "Walk through rhododendron forests and traditional Gurung villages to reach the heart of the Annapurna massif – a natural amphitheatre surrounded by towering peaks.",
+                    itineraryDays: [ { day: 1, title: "Drive Kathmandu to Pokhara", desc: "6-hour drive.", overnight: "Pokhara" }, { day: 2, title: "Drive to Nayapul, trek to Tikhedhunga", desc: "1-hour drive, 3-4 hours trek.", overnight: "Tikhedhunga" }, { day: 3, title: "Trek to Ghorepani (2,850m)", desc: "5-6 hours, beautiful scenery.", overnight: "Ghorepani" }, { day: 4, title: "Hike Poon Hill (3,210m), trek to Tadapani", desc: "Sunrise hike, then 5 hours to Tadapani.", overnight: "Tadapani" }, { day: 5, title: "Trek to Chhomrong (2,170m)", desc: "5 hours, through forests.", overnight: "Chhomrong" }, { day: 6, title: "Trek to Himalaya Hotel (2,920m)", desc: "4-5 hours.", overnight: "Himalaya Hotel" }, { day: 7, title: "Trek to ABC (4,130m)", desc: "5 hours, spectacular.", overnight: "Annapurna Base Camp" }, { day: 8, title: "Explore ABC, trek to Bamboo", desc: "Morning exploration, then 5 hours descent.", overnight: "Bamboo" }, { day: 9, title: "Trek to Jhinu Danda (hot springs)", desc: "4 hours, relax in hot springs.", overnight: "Jhinu Danda" }, { day: 10, title: "Trek to Nayapul, drive to Pokhara", desc: "3 hours trek, drive to Pokhara.", overnight: "Pokhara" } ],
+                    inclusions: [ "All permits", "Guide", "Porter", "Accommodation", "Meals during trek" ], exclusions: [ "International flights", "Visa", "Insurance", "Personal expenses" ],
+                    quickInfo: { maxAltitude: "4,130m", difficulty: "Moderate", bestSeason: "March–May, October–November", groupSize: "2–12", accommodation: "Tea houses" }
+                },
+                {
+                    name: "Ghorepani Poon Hill Trek", region: "Annapurna", days: 5, difficulty: "Easy", maxAlt: "3,210m", price: 550, description: "Short trek with sunrise views over the Annapurna range.", rating: 4.6, img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80",
+                    fullDesc: "Perfect for beginners. Hike through terraced fields and rhododendron forests to Poon Hill, where the sunrise paints Dhaulagiri and Annapurna in gold.",
+                    itineraryDays: [ { day: 1, title: "Drive to Nayapul, trek to Tikhedhunga", desc: "Drive, 3-4 hours trek.", overnight: "Tikhedhunga" }, { day: 2, title: "Trek to Ghorepani", desc: "5-6 hours.", overnight: "Ghorepani" }, { day: 3, title: "Sunrise at Poon Hill, trek to Tadapani", desc: "Sunrise hike, then 5 hours.", overnight: "Tadapani" }, { day: 4, title: "Trek to Ghandruk, drive to Pokhara", desc: "3-4 hours trek, drive.", overnight: "Pokhara" }, { day: 5, title: "Drive back to Kathmandu", desc: "Drive.", overnight: "" } ],
+                    inclusions: [ "Guide", "Porter", "Accommodation", "Meals during trek" ], exclusions: [ "International flights", "Visa", "Insurance", "Personal expenses" ],
+                    quickInfo: { maxAltitude: "3,210m", difficulty: "Easy", bestSeason: "Year-round", groupSize: "2–12", accommodation: "Tea houses" }
+                },
+                {
+                    name: "Annapurna Circuit Trek", region: "Annapurna", days: 16, difficulty: "Challenging", maxAlt: "5,416m", price: 1600, description: "Classic circuit around the Annapurna massif, crossing Thorong La pass.", rating: 4.9, img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80",
+                    fullDesc: "One of the world's greatest treks. Cross the Thorong La (5,416m), traverse diverse landscapes from subtropical forests to high desert, and immerse in Buddhist culture.",
+                    itineraryDays: [ { day: 1, title: "Drive to Besisahar", desc: "Drive.", overnight: "Besisahar" }, { day: 2, title: "Trek to Ngadi", desc: "Trek.", overnight: "Ngadi" }, { day: 3, title: "Trek to Jagat", desc: "Trek.", overnight: "Jagat" }, { day: 4, title: "Trek to Dharapani", desc: "Trek.", overnight: "Dharapani" }, { day: 5, title: "Trek to Chame", desc: "Trek.", overnight: "Chame" }, { day: 6, title: "Trek to Pisang", desc: "Trek.", overnight: "Pisang" }, { day: 7, title: "Trek to Manang", desc: "Trek.", overnight: "Manang" }, { day: 8, title: "Acclimatization day", desc: "Hike around Manang.", overnight: "Manang" }, { day: 9, title: "Trek to Yak Kharka", desc: "Trek.", overnight: "Yak Kharka" }, { day: 10, title: "Trek to Thorong Phedi", desc: "Trek.", overnight: "Thorong Phedi" }, { day: 11, title: "Cross Thorong La (5,416m) – Muktinath", desc: "Cross pass, descend to Muktinath.", overnight: "Muktinath" }, { day: 12, title: "Trek to Jomsom", desc: "Trek.", overnight: "Jomsom" }, { day: 13, title: "Fly to Pokhara", desc: "Flight.", overnight: "Pokhara" }, { day: 14, title: "Free day in Pokhara", desc: "Free day.", overnight: "Pokhara" }, { day: 15, title: "Drive to Kathmandu", desc: "Drive.", overnight: "Kathmandu" }, { day: 16, title: "Departure", desc: "Departure.", overnight: "" } ],
+                    inclusions: [ "All permits", "Guide", "Porter", "Accommodation", "Meals during trek" ], exclusions: [ "International flights", "Visa", "Insurance", "Personal expenses" ],
+                    quickInfo: { maxAltitude: "5,416m", difficulty: "Challenging", bestSeason: "March–May, October–November", groupSize: "2–12", accommodation: "Tea houses" }
+                },
+                {
+                    name: "Mardi Himal Trek", region: "Annapurna", days: 7, difficulty: "Moderate", maxAlt: "4,500m", price: 850, description: "Off-the-beaten-path trek with stunning close-up views of Machhapuchhre.", rating: 4.7, img: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80",
+                    fullDesc: "Discover the hidden gem of Annapurna. Trek through pristine forests to Mardi Himal Base Camp, with breathtaking views of Fishtail Mountain.",
+                    itineraryDays: [ { day: 1, title: "Drive to Kande, trek to Australian Camp", desc: "Drive, 2 hours trek.", overnight: "Australian Camp" }, { day: 2, title: "Trek to Forest Camp (2,520m)", desc: "5 hours.", overnight: "Forest Camp" }, { day: 3, title: "Trek to Low Camp (3,000m)", desc: "4 hours.", overnight: "Low Camp" }, { day: 4, title: "Trek to High Camp (3,550m)", desc: "3-4 hours.", overnight: "High Camp" }, { day: 5, title: "Hike to Mardi Himal Base Camp (4,500m), return to High Camp", desc: "6 hours round trip.", overnight: "High Camp" }, { day: 6, title: "Trek down to Siding, drive to Pokhara", desc: "5-6 hours trek, drive.", overnight: "Pokhara" }, { day: 7, title: "Drive back to Kathmandu", desc: "Drive.", overnight: "" } ],
+                    inclusions: [ "Guide", "Porter", "Accommodation", "Meals during trek" ], exclusions: [ "International flights", "Visa", "Insurance", "Personal expenses" ],
+                    quickInfo: { maxAltitude: "4,500m", difficulty: "Moderate", bestSeason: "March–May, October–November", groupSize: "2–10", accommodation: "Tea houses" }
+                },
+                {
+                    name: "Langtang Valley Trek", region: "Langtang", days: 8, difficulty: "Moderate", maxAlt: "3,870m", price: 750, description: "Close to Kathmandu, rich in culture and stunning mountain views.", rating: 4.7, img: "https://images.unsplash.com/photo-1589621315121-7c4a7fa7f5a2?w=600&q=80",
+                    fullDesc: "Escape to the 'Valley of Glaciers'. Langtang offers Tamang hospitality, alpine forests, and panoramic views of Langtang Lirung.",
+                    itineraryDays: [ { day: 1, title: "Drive to Syabrubesi", desc: "7-8 hours drive.", overnight: "Syabrubesi" }, { day: 2, title: "Trek to Lama Hotel", desc: "5-6 hours.", overnight: "Lama Hotel" }, { day: 3, title: "Trek to Langtang Village", desc: "4-5 hours.", overnight: "Langtang Village" }, { day: 4, title: "Trek to Kyanjin Gompa (3,870m)", desc: "3-4 hours.", overnight: "Kyanjin Gompa" }, { day: 5, title: "Hike to Tserko Ri (4,984m)", desc: "Sunrise hike.", overnight: "Kyanjin Gompa" }, { day: 6, title: "Trek back to Lama Hotel", desc: "5-6 hours.", overnight: "Lama Hotel" }, { day: 7, title: "Trek to Syabrubesi", desc: "5-6 hours.", overnight: "Syabrubesi" }, { day: 8, title: "Drive back to Kathmandu", desc: "Drive.", overnight: "" } ],
+                    inclusions: [ "All permits", "Guide", "Porter", "Accommodation", "Meals during trek" ], exclusions: [ "International flights", "Visa", "Insurance", "Personal expenses" ],
+                    quickInfo: { maxAltitude: "3,870m", difficulty: "Moderate", bestSeason: "March–May, September–November", groupSize: "2–12", accommodation: "Tea houses" }
+                },
+                {
+                    name: "Gosainkunda Lake Trek", region: "Langtang", days: 8, difficulty: "Moderate", maxAlt: "4,380m", price: 800, description: "Sacred alpine lakes pilgrimage, surrounded by peaks.", rating: 4.6, img: "https://images.unsplash.com/photo-1589621315121-7c4a7fa7f5a2?w=600&q=80",
+                    fullDesc: "A spiritual journey to the holy Gosainkunda lakes. Trek through rhododendron forests and high passes, with stunning views of Langtang and Ganesh Himal.",
+                    itineraryDays: [ { day: 1, title: "Drive to Syabrubesi", desc: "Drive.", overnight: "Syabrubesi" }, { day: 2, title: "Trek to Lama Hotel", desc: "Trek.", overnight: "Lama Hotel" }, { day: 3, title: "Trek to Langtang Village", desc: "Trek.", overnight: "Langtang Village" }, { day: 4, title: "Trek to Kyanjin Gompa", desc: "Trek.", overnight: "Kyanjin Gompa" }, { day: 5, title: "Trek to Lauribina (3,920m)", desc: "Trek.", overnight: "Lauribina" }, { day: 6, title: "Trek to Gosainkunda (4,380m)", desc: "Trek.", overnight: "Gosainkunda" }, { day: 7, title: "Return to Dhunche", desc: "Trek.", overnight: "Dhunche" }, { day: 8, title: "Drive to Kathmandu", desc: "Drive.", overnight: "" } ],
+                    inclusions: [ "All permits", "Guide", "Porter", "Accommodation", "Meals during trek" ], exclusions: [ "International flights", "Visa", "Insurance", "Personal expenses" ],
+                    quickInfo: { maxAltitude: "4,380m", difficulty: "Moderate", bestSeason: "June–September", groupSize: "2–12", accommodation: "Tea houses" }
+                },
+                {
+                    name: "Tamang Heritage Trail", region: "Langtang", days: 7, difficulty: "Easy", maxAlt: "3,160m", price: 700, description: "Cultural trek through Tamang villages, hot springs, and homestays.", rating: 4.7, img: "https://images.unsplash.com/photo-1589621315121-7c4a7fa7f5a2?w=600&q=80",
+                    fullDesc: "Immerse in Tamang culture, visit traditional villages, enjoy hot springs, and experience authentic homestay hospitality.",
+                    itineraryDays: [ { day: 1, title: "Drive to Syabrubesi", desc: "Drive.", overnight: "Syabrubesi" }, { day: 2, title: "Trek to Gatlang (2,338m)", desc: "Trek.", overnight: "Gatlang" }, { day: 3, title: "Trek to Tatopani (hot springs)", desc: "Trek.", overnight: "Tatopani" }, { day: 4, title: "Trek to Thuman (2,338m)", desc: "Trek.", overnight: "Thuman" }, { day: 5, title: "Trek to Briddim (2,239m)", desc: "Trek.", overnight: "Briddim" }, { day: 6, title: "Trek back to Syabrubesi", desc: "Trek.", overnight: "Syabrubesi" }, { day: 7, title: "Drive to Kathmandu", desc: "Drive.", overnight: "" } ],
+                    inclusions: [ "Guide", "Homestay accommodation", "Meals during trek" ], exclusions: [ "International flights", "Visa", "Insurance", "Personal expenses" ],
+                    quickInfo: { maxAltitude: "3,160m", difficulty: "Easy", bestSeason: "March–May, September–November", groupSize: "2–12", accommodation: "Homestays / teahouses" }
+                },
+                {
+                    name: "Helambu Trek", region: "Langtang", days: 6, difficulty: "Easy", maxAlt: "3,650m", price: 650, description: "Lush green hills, Buddhist monasteries, and easy access from Kathmandu.", rating: 4.5, img: "https://images.unsplash.com/photo-1589621315121-7c4a7fa7f5a2?w=600&q=80",
+                    fullDesc: "A quick escape to the serene Helambu region. Walk through charming villages, terraced fields, and enjoy mountain views without the high altitude.",
+                    itineraryDays: [ { day: 1, title: "Drive to Sundarijal, trek to Chisapani", desc: "Drive, 4 hours trek.", overnight: "Chisapani" }, { day: 2, title: "Trek to Kutumsang", desc: "6 hours.", overnight: "Kutumsang" }, { day: 3, title: "Trek to Tharepati (3,650m)", desc: "5 hours.", overnight: "Tharepati" }, { day: 4, title: "Trek to Tarkeghyang", desc: "5 hours.", overnight: "Tarkeghyang" }, { day: 5, title: "Trek to Sermathang", desc: "4 hours.", overnight: "Sermathang" }, { day: 6, title: "Drive back to Kathmandu", desc: "Drive.", overnight: "" } ],
+                    inclusions: [ "Guide", "Porter", "Accommodation", "Meals during trek" ], exclusions: [ "International flights", "Visa", "Insurance", "Personal expenses" ],
+                    quickInfo: { maxAltitude: "3,650m", difficulty: "Easy", bestSeason: "Year-round", groupSize: "2–12", accommodation: "Tea houses" }
+                },
+                {
+                    name: "Manaslu Circuit Trek", region: "Manaslu", days: 16, difficulty: "Challenging", maxAlt: "5,106m", price: 1650, description: "Remote circuit around the world's eighth highest peak.", rating: 4.8, img: "https://images.unsplash.com/photo-1610981029346-6f28c1ff63a4?w=600&q=80",
+                    fullDesc: "One of Nepal's best-kept secrets. The Manaslu Circuit offers pristine nature, diverse cultures, and the thrilling Larkya La Pass (5,160m).",
+                    itineraryDays: [ { day: 1, title: "Drive to Soti Khola", desc: "Drive.", overnight: "Soti Khola" }, { day: 2, title: "Trek to Machha Khola", desc: "Trek.", overnight: "Machha Khola" }, { day: 3, title: "Trek to Jagat", desc: "Trek.", overnight: "Jagat" }, { day: 4, title: "Trek to Deng", desc: "Trek.", overnight: "Deng" }, { day: 5, title: "Trek to Namrung (2,630m)", desc: "Trek.", overnight: "Namrung" }, { day: 6, title: "Trek to Lho (3,180m)", desc: "Trek.", overnight: "Lho" }, { day: 7, title: "Trek to Samagaon (3,530m)", desc: "Trek.", overnight: "Samagaon" }, { day: 8, title: "Acclimatization – hike to Manaslu Base Camp", desc: "Hike.", overnight: "Samagaon" }, { day: 9, title: "Trek to Samdo (3,860m)", desc: "Trek.", overnight: "Samdo" }, { day: 10, title: "Trek to Dharmasala (4,460m)", desc: "Trek.", overnight: "Dharmasala" }, { day: 11, title: "Cross Larkya La (5,106m), descend to Bhimthang", desc: "Cross pass.", overnight: "Bhimthang" }, { day: 12, title: "Trek to Tilje", desc: "Trek.", overnight: "Tilje" }, { day: 13, title: "Trek to Dharapani", desc: "Trek.", overnight: "Dharapani" }, { day: 14, title: "Drive to Kathmandu", desc: "Drive.", overnight: "Kathmandu" }, { day: 15, title: "Buffer day", desc: "Buffer.", overnight: "Kathmandu" }, { day: 16, title: "Departure", desc: "Departure.", overnight: "" } ],
+                    inclusions: [ "All permits", "Guide", "Porter", "Accommodation", "Meals during trek" ], exclusions: [ "International flights", "Visa", "Insurance", "Personal expenses" ],
+                    quickInfo: { maxAltitude: "5,106m", difficulty: "Challenging", bestSeason: "March–May, September–November", groupSize: "2–10", accommodation: "Tea houses" }
+                },
+                {
+                    name: "Tsum Valley Trek", region: "Manaslu", days: 12, difficulty: "Moderate", maxAlt: "3,700m", price: 1550, description: "Sacred Himalayan valley, ancient Buddhist monasteries.", rating: 4.7, img: "https://images.unsplash.com/photo-1610981029346-6f28c1ff63a4?w=600&q=80",
+                    fullDesc: "Discover the hidden Tsum Valley, a sacred Buddhist enclave with ancient monasteries, mani walls, and pristine landscapes.",
+                    itineraryDays: [ { day: 1, title: "Drive to Soti Khola", desc: "Drive.", overnight: "Soti Khola" }, { day: 2, title: "Trek to Machha Khola", desc: "Trek.", overnight: "Machha Khola" }, { day: 3, title: "Trek to Jagat", desc: "Trek.", overnight: "Jagat" }, { day: 4, title: "Trek to Chumling (2,386m)", desc: "Trek.", overnight: "Chumling" }, { day: 5, title: "Trek to Chhekampar (3,015m)", desc: "Trek.", overnight: "Chhekampar" }, { day: 6, title: "Trek to Nile (3,361m)", desc: "Trek.", overnight: "Nile" }, { day: 7, title: "Trek to Mu Gompa (3,700m)", desc: "Trek.", overnight: "Mu Gompa" }, { day: 8, title: "Explore Mu Gompa", desc: "Exploration.", overnight: "Mu Gompa" }, { day: 9, title: "Return to Chumling", desc: "Trek.", overnight: "Chumling" }, { day: 10, title: "Trek to Jagat", desc: "Trek.", overnight: "Jagat" }, { day: 11, title: "Trek to Soti Khola", desc: "Trek.", overnight: "Soti Khola" }, { day: 12, title: "Drive to Kathmandu", desc: "Drive.", overnight: "" } ],
+                    inclusions: [ "All permits", "Guide", "Porter", "Accommodation", "Meals during trek" ], exclusions: [ "International flights", "Visa", "Insurance", "Personal expenses" ],
+                    quickInfo: { maxAltitude: "3,700m", difficulty: "Moderate", bestSeason: "March–May, September–November", groupSize: "2–10", accommodation: "Tea houses" }
+                },
+                {
+                    name: "Manaslu Short Trek", region: "Manaslu", days: 8, difficulty: "Moderate", maxAlt: "3,500m", price: 1100, description: "Explore the lower Manaslu region, beautiful forests and villages.", rating: 4.6, img: "https://images.unsplash.com/photo-1610981029346-6f28c1ff63a4?w=600&q=80",
+                    fullDesc: "A shorter version of the Manaslu Circuit, perfect for those with limited time. Enjoy stunning landscapes and traditional villages.",
+                    itineraryDays: [ { day: 1, title: "Drive to Soti Khola", desc: "Drive.", overnight: "Soti Khola" }, { day: 2, title: "Trek to Machha Khola", desc: "Trek.", overnight: "Machha Khola" }, { day: 3, title: "Trek to Jagat", desc: "Trek.", overnight: "Jagat" }, { day: 4, title: "Trek to Deng", desc: "Trek.", overnight: "Deng" }, { day: 5, title: "Trek to Namrung (2,630m)", desc: "Trek.", overnight: "Namrung" }, { day: 6, title: "Trek to Lho (3,180m)", desc: "Trek.", overnight: "Lho" }, { day: 7, title: "Return to Soti Khola", desc: "Trek.", overnight: "Soti Khola" }, { day: 8, title: "Drive to Kathmandu", desc: "Drive.", overnight: "" } ],
+                    inclusions: [ "All permits", "Guide", "Porter", "Accommodation", "Meals during trek" ], exclusions: [ "International flights", "Visa", "Insurance", "Personal expenses" ],
+                    quickInfo: { maxAltitude: "3,500m", difficulty: "Moderate", bestSeason: "March–May, September–November", groupSize: "2–12", accommodation: "Tea houses" }
+                },
+                {
+                    name: "Manaslu & Tsum Valley Combo", region: "Manaslu", days: 18, difficulty: "Challenging", maxAlt: "5,106m", price: 1950, description: "Combine Tsum Valley's spirituality with the classic Manaslu Circuit.", rating: 4.8, img: "https://images.unsplash.com/photo-1610981029346-6f28c1ff63a4?w=600&q=80",
+                    fullDesc: "The ultimate Manaslu experience. Explore the sacred Tsum Valley, then continue the full circuit crossing Larkya La Pass.",
+                    itineraryDays: [ { day: 1, title: "Drive to Soti Khola", desc: "Drive.", overnight: "Soti Khola" }, { day: 2, title: "Trek to Machha Khola", desc: "Trek.", overnight: "Machha Khola" }, { day: 3, title: "Trek to Jagat", desc: "Trek.", overnight: "Jagat" }, { day: 4, title: "Trek to Chumling (Tsum)", desc: "Trek.", overnight: "Chumling" }, { day: 5, title: "Trek to Chhekampar", desc: "Trek.", overnight: "Chhekampar" }, { day: 6, title: "Trek to Mu Gompa", desc: "Trek.", overnight: "Mu Gompa" }, { day: 7, title: "Explore Mu Gompa", desc: "Exploration.", overnight: "Mu Gompa" }, { day: 8, title: "Return to Chumling", desc: "Trek.", overnight: "Chumling" }, { day: 9, title: "Trek to Jagat", desc: "Trek.", overnight: "Jagat" }, { day: 10, title: "Trek to Deng", desc: "Trek.", overnight: "Deng" }, { day: 11, title: "Trek to Namrung", desc: "Trek.", overnight: "Namrung" }, { day: 12, title: "Trek to Samagaon", desc: "Trek.", overnight: "Samagaon" }, { day: 13, title: "Acclimatization", desc: "Rest day.", overnight: "Samagaon" }, { day: 14, title: "Trek to Samdo", desc: "Trek.", overnight: "Samdo" }, { day: 15, title: "Trek to Dharmasala", desc: "Trek.", overnight: "Dharmasala" }, { day: 16, title: "Cross Larkya La, descend to Bhimthang", desc: "Cross pass.", overnight: "Bhimthang" }, { day: 17, title: "Trek to Dharapani", desc: "Trek.", overnight: "Dharapani" }, { day: 18, title: "Drive to Kathmandu", desc: "Drive.", overnight: "" } ],
+                    inclusions: [ "All permits", "Guide", "Porter", "Accommodation", "Meals during trek" ], exclusions: [ "International flights", "Visa", "Insurance", "Personal expenses" ],
+                    quickInfo: { maxAltitude: "5,106m", difficulty: "Challenging", bestSeason: "March–May, September–November", groupSize: "2–8", accommodation: "Tea houses" }
+                },
+                {
+                    name: "Ruby Valley Trek", region: "Others", days: 9, difficulty: "Moderate", maxAlt: "3,700m", price: 850, description: "Off-the-beaten-path trek through Ruby Valley, rich in Tamang culture and pristine landscapes.", rating: 4.6, img: "https://images.unsplash.com/photo-1526392060935-9d4bd7441b9b?w=600&q=80",
+                    fullDesc: "Explore the hidden Ruby Valley, nestled between Ganesh Himal and Langtang. Experience authentic Tamang villages, terraced farms, and stunning mountain views without the crowds.",
+                    itineraryDays: [ { day: 1, title: "Drive Kathmandu to Arughat", desc: "Drive 6-7 hours.", overnight: "Arughat" }, { day: 2, title: "Trek to Soti Khola", desc: "4-5 hours.", overnight: "Soti Khola" }, { day: 3, title: "Trek to Machha Khola", desc: "5 hours.", overnight: "Machha Khola" }, { day: 4, title: "Trek to Jagat", desc: "5 hours.", overnight: "Jagat" }, { day: 5, title: "Trek to Lapubesi", desc: "5 hours.", overnight: "Lapubesi" }, { day: 6, title: "Trek to Tatopani (hot springs)", desc: "4 hours.", overnight: "Tatopani" }, { day: 7, title: "Trek to Thonje", desc: "5 hours.", overnight: "Thonje" }, { day: 8, title: "Trek to Dharapani, drive to Kathmandu", desc: "Trek 3 hours, then drive.", overnight: "Kathmandu" }, { day: 9, title: "Departure", desc: "Transfer to airport.", overnight: "" } ],
+                    inclusions: [ "All permits", "Guide", "Porter", "Accommodation", "Meals during trek" ], exclusions: [ "International flights", "Visa", "Insurance", "Personal expenses" ],
+                    quickInfo: { maxAltitude: "3,700m", difficulty: "Moderate", bestSeason: "March–May, September–November", groupSize: "2–12", accommodation: "Tea houses" }
+                }
+            ];
+
+            function getDifficultyClass(difficulty) {
+                return difficulty.toLowerCase().includes('challenging') ? 'challenging' : difficulty.toLowerCase().includes('moderate') ? 'moderate' : 'easy';
+            }
+
+            const trekGrid = document.getElementById('trekGrid');
+            const filterSelect = document.getElementById('regionFilter');
+
+            function renderCards(filter = 'all') {
+                trekGrid.innerHTML = '';
+                const filtered = filter === 'all' ? treks : treks.filter(t => t.region === filter);
+                filtered.forEach(trek => {
+                    const card = document.createElement('div');
+                    card.className = 'trek-card';
+                    card.innerHTML = `
+                        <img src="${trek.img}" alt="${trek.name}">
+                        <h3 class="trek-title">${trek.name}</h3>
+                        <div class="trek-overlay">
+                            <div class="trek-meta"><span><i class="far fa-calendar-alt"></i> ${trek.days} days</span><span><i class="fas fa-mountain"></i> ${trek.maxAlt}</span></div>
+                            <span class="trek-difficulty difficulty-badge difficulty-${getDifficultyClass(trek.difficulty)}">${trek.difficulty}</span>
+                            <div class="price">$${trek.price}</div>
+                            <p class="trek-description">${trek.description}</p>
+                            <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span>${trek.rating}</span></div>
+                            <div class="card-buttons"><button class="btn btn-outline view-details" data-trek='${JSON.stringify(trek).replace(/'/g, "&#39;")}'>View details</button><button class="btn book-now" data-trek-name="${trek.name}">Book now</button></div>
+                        </div>
+                    `;
+                    trekGrid.appendChild(card);
+                });
+                document.querySelectorAll('.view-details').forEach(btn => btn.addEventListener('click', function(e) { e.preventDefault(); const trek = JSON.parse(this.dataset.trek); openTrekModal(trek); }));
+                document.querySelectorAll('.book-now').forEach(btn => btn.addEventListener('click', function(e) { e.preventDefault(); const trekName = this.dataset.trekName; openBookingModal(trekName); }));
+            }
+            renderCards();
+            filterSelect.addEventListener('change', function() { renderCards(this.value); });
+
+            const trekModal = document.getElementById('trekModal');
+            const modalHeader = document.getElementById('modalHeader');
+            const itineraryAccordion = document.getElementById('itineraryAccordion');
+            const essentialsContent = document.getElementById('essentialsContent');
+            const printBtn = document.getElementById('printBtn');
+            const modalBookNowBtn = document.getElementById('modalBookNowBtn');
+            const modalClose = trekModal.querySelector('.modal-close');
+
+            function openTrekModal(trek) {
+                modalHeader.innerHTML = `<h2>${trek.name}</h2><div class="rating-large"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><span>${trek.rating}</span></div><div class="quick-meta"><span class="quick-meta-item"><i class="far fa-calendar-alt"></i> ${trek.days} days</span><span class="quick-meta-item"><i class="fas fa-mountain"></i> Max ${trek.maxAlt}</span><span class="quick-meta-item"><i class="fas fa-map-pin"></i> ${trek.region}</span><span class="quick-meta-item"><i class="fas fa-tag"></i> $${trek.price}</span></div>`;
+                let itineraryHtml = '';
+                trek.itineraryDays.forEach((day, idx) => { itineraryHtml += `<div class="accordion-item" data-day="${idx}"><div class="accordion-header"><span class="day-title">Day ${day.day}: ${day.title}</span><i class="fas fa-chevron-down"></i></div><div class="accordion-content"><p>${day.desc}</p>${day.overnight ? `<span class="stay-overnight"><i class="fas fa-bed"></i> Stay Overnight in ${day.overnight}!</span>` : ''}</div></div>`; });
+                itineraryAccordion.innerHTML = itineraryHtml;
+                essentialsContent.innerHTML = `<div class="essentials-block"><h4><i class="fas fa-check-circle" style="color:#2ecc71;"></i> Inclusions</h4><ul class="inclusion-list">${trek.inclusions.map(inc => `<li><i class="fas fa-check-circle"></i> ${inc}</li>`).join('')}</ul></div><div class="essentials-block"><h4><i class="fas fa-times-circle" style="color:#e74c3c;"></i> Exclusions</h4><ul class="exclusion-list">${trek.exclusions.map(exc => `<li><i class="fas fa-times-circle"></i> ${exc}</li>`).join('')}</ul></div><div class="quick-info-box"><div class="quick-info-item"><i class="fas fa-arrow-up"></i> <strong>Max Altitude:</strong> ${trek.quickInfo.maxAltitude}</div><div class="quick-info-item"><i class="fas fa-signal"></i> <strong>Difficulty:</strong> ${trek.quickInfo.difficulty}</div><div class="quick-info-item"><i class="fas fa-calendar-alt"></i> <strong>Best Season:</strong> ${trek.quickInfo.bestSeason}</div><div class="quick-info-item"><i class="fas fa-users"></i> <strong>Group Size:</strong> ${trek.quickInfo.groupSize}</div><div class="quick-info-item"><i class="fas fa-bed"></i> <strong>Accommodation:</strong> ${trek.quickInfo.accommodation}</div></div>`;
+                trekModal.classList.add('show');
+                document.body.style.overflow = 'hidden';
+                document.querySelectorAll('.accordion-item').forEach(item => { const header = item.querySelector('.accordion-header'); const content = item.querySelector('.accordion-content'); header.addEventListener('click', function() { this.classList.toggle('active'); content.style.maxHeight = content.style.maxHeight ? null : content.scrollHeight + 'px'; }); });
+            }
+
+            printBtn.addEventListener('click', function() { const trekName = modalHeader.querySelector('h2').innerText; const trek = treks.find(t => t.name === trekName); if (!trek) return; let printContent = `<html><head><title>${trek.name} - Itinerary</title><style>body{font-family:Arial,sans-serif;max-width:800px;margin:40px auto;line-height:1.6;color:#333;}h1{color:#1e2a3a;}.logo{text-align:center;margin-bottom:30px;}.logo img{max-width:200px;}.day{margin-bottom:15px;}.day strong{color:#1e2a3a;}.overnight{font-style:italic;color:#6c7a89;margin-top:5px;}.essentials{margin-top:30px;border-top:2px solid #87CEEB;padding-top:20px;}.essentials h3{color:#1e2a3a;}.essentials ul{list-style:none;padding-left:0;}.essentials li{margin-bottom:8px;}</style></head><body><div class="logo"><img src="https://i.postimg.cc/CKK7hqB9/full-removebg-preview.png" alt="Yeti Wings" style="max-width:200px;"></div><h1>${trek.name}</h1><p><strong>Duration:</strong> ${trek.days} days | <strong>Max Altitude:</strong> ${trek.maxAlt} | <strong>Difficulty:</strong> ${trek.difficulty}</p><h2>Detailed Itinerary</h2>`; trek.itineraryDays.forEach(day => { printContent += `<div class="day"><strong>Day ${day.day}: ${day.title}</strong><p>${day.desc}</p>${day.overnight ? `<p class="overnight"><i class="fas fa-bed"></i> Stay Overnight in ${day.overnight}!</p>` : ''}</div>`; }); printContent += `<div class="essentials"><h3>Inclusions</h3><ul>${trek.inclusions.map(i => `<li>✅ ${i}</li>`).join('')}</ul><h3>Exclusions</h3><ul>${trek.exclusions.map(e => `<li>❌ ${e}</li>`).join('')}</ul><h3>Quick Info</h3><p>Max Altitude: ${trek.quickInfo.maxAltitude}<br>Difficulty: ${trek.quickInfo.difficulty}<br>Best Season: ${trek.quickInfo.bestSeason}<br>Group Size: ${trek.quickInfo.groupSize}<br>Accommodation: ${trek.quickInfo.accommodation}</p></div></body></html>`; const printWindow = window.open('', '_blank'); printWindow.document.write(printContent); printWindow.document.close(); printWindow.focus(); printWindow.print(); });
+            modalBookNowBtn.addEventListener('click', function() { const trekName = modalHeader.querySelector('h2').innerText; openBookingModal(trekName); });
+            modalClose.addEventListener('click', function() { trekModal.classList.remove('show'); document.body.style.overflow = ''; });
+            window.addEventListener('click', function(e) { if (e.target === trekModal) { trekModal.classList.remove('show'); document.body.style.overflow = ''; } });
+            window.addEventListener('keydown', function(e) { if (e.key === 'Escape' && trekModal.classList.contains('show')) { trekModal.classList.remove('show'); document.body.style.overflow = ''; } });
+
+            const bookingModal = document.getElementById('bookingModal');
+            const bookingModalTitle = document.getElementById('bookingModalTitle');
+            const specialRequestsField = document.getElementById('specialRequests');
+            window.openBookingModal = function(trekName) { bookingModalTitle.textContent = `Book this trek: ${trekName}`; if (specialRequestsField) specialRequestsField.value = ''; bookingModal.classList.add('show'); document.body.style.overflow = 'hidden'; };
+            const emailIcon = document.getElementById('emailIcon');
+            const copyTooltip = document.getElementById('copyTooltip');
+            if (emailIcon) emailIcon.addEventListener('click', function(e) { e.preventDefault(); window.location.href = 'mailto:infoyetiwings@gmail.com'; navigator.clipboard.writeText('infoyetiwings@gmail.com').then(() => { copyTooltip.classList.add('show'); setTimeout(() => copyTooltip.classList.remove('show'), 2000); }); });
+            document.querySelectorAll('.modal .modal-close').forEach(btn => btn.addEventListener('click', function() { this.closest('.modal').classList.remove('show'); document.body.style.overflow = ''; }));
+            window.addEventListener('click', function(e) { if (e.target.classList.contains('modal')) { e.target.classList.remove('show'); document.body.style.overflow = ''; } });
+            window.addEventListener('keydown', function(e) { if (e.key === 'Escape') document.querySelectorAll('.modal.show').forEach(modal => { modal.classList.remove('show'); document.body.style.overflow = ''; }); });
+
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(q => { q.addEventListener('click', function() { const answer = this.nextElementSibling; answer.classList.toggle('active'); this.classList.toggle('active'); if (answer.style.maxHeight) answer.style.maxHeight = null; else answer.style.maxHeight = answer.scrollHeight + 'px'; }); });
+
+            // Fix 4: AJAX form submission for booking modal
+            const bookingForm = document.getElementById('bookingForm');
+            const formStatus = document.getElementById('formStatus');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    const submitBtn = bookingForm.querySelector('button[type="submit"]');
+                    const originalBtnText = submitBtn.innerText;
+                    submitBtn.disabled = true;
+                    submitBtn.innerText = 'Sending...';
+                    formStatus.innerHTML = '';
+                    const formData = new FormData(bookingForm);
+                    let tourName = document.getElementById('bookingModalTitle').innerText.replace('Book this trek: ', '');
+                    if (tourName && !tourName.includes('Plan Your')) {
+                        formData.append('tour', tourName);
+                    }
+                    try {
+                        const response = await fetch('https://formsubmit.co/ajax/infoyetiwings@gmail.com', {
+                            method: 'POST',
+                            body: formData
+                        });
+                        const result = await response.json();
+                        if (result.success === 'true' || response.ok) {
+                            formStatus.innerHTML = '<span style="color: #2e7d32;">✓ Thank you! We’ll get back to you within 24 hours.</span>';
+                            bookingForm.reset();
+                            setTimeout(() => {
+                                document.getElementById('bookingModal').classList.remove('show');
+                                document.body.style.overflow = '';
+                                formStatus.innerHTML = '';
+                            }, 3000);
+                        } else {
+                            throw new Error('Server error');
+                        }
+                    } catch (error) {
+                        formStatus.innerHTML = '<span style="color: #c62828;">⚠️ There was a problem. Please email us directly at infoyetiwings@gmail.com or try again later.</span>';
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = originalBtnText;
+                    }
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
